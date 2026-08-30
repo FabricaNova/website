@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Zettelwirtschaft-Check — Fabrica Nova</title>
+<!--
+  QUELLE für assets/Fabrica-Nova-Zettelwirtschaft-Check.pdf
+  Diese Datei ist nicht Teil der Website. Sie liegt hier, damit der Check
+  jederzeit inhaltlich geändert und neu als PDF ausgegeben werden kann:
+  im Browser öffnen -> Drucken -> "Als PDF speichern", Format A4, Ränder: keine,
+  Hintergrundgrafiken aktivieren. Ergebnis nach assets/ legen.
+-->
+<style>
+  @page { size: A4; margin: 0; }
+
+  @font-face { font-family:'Hanken Grotesk'; font-weight:400; src:url('../assets/fonts/hanken-grotesk-latin-400-normal.woff2') format('woff2') }
+  @font-face { font-family:'Hanken Grotesk'; font-weight:600; src:url('../assets/fonts/hanken-grotesk-latin-600-normal.woff2') format('woff2') }
+  @font-face { font-family:'Hanken Grotesk'; font-weight:700; src:url('../assets/fonts/hanken-grotesk-latin-700-normal.woff2') format('woff2') }
+
+  :root {
+    --ink:#003A41; --paper:#FDF6EA; --sage:#ECEBE3; --teal:#3F6F76; --gold:#BFB360;
+    --ink-75:rgba(0,58,65,.75); --ink-30:rgba(0,58,65,.3);
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font-family:'Hanken Grotesk',sans-serif;color:var(--ink);background:#fff;
+       -webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  .page{width:210mm;height:297mm;background:var(--paper);padding:16mm 18mm 14mm;
+        position:relative;overflow:hidden;page-break-after:always;display:flex;flex-direction:column}
+  .page:last-child{page-break-after:auto}
+
+  .facet{position:absolute;right:-14mm;top:-14mm;width:52mm;height:52mm;background:var(--sage);
+         clip-path:polygon(0 0,100% 0,100% 72%,72% 100%,0 100%)}
+
+  header{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;
+         padding-bottom:5mm;border-bottom:1px solid var(--ink-30)}
+  .brand{font-size:8pt;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+  .kicker{font-size:7.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+
+  h1{font-size:26pt;line-height:1.05;letter-spacing:-.02em;margin:9mm 0 3mm;max-width:130mm}
+  .lede{font-size:10.5pt;line-height:1.5;color:var(--ink-75);max-width:150mm}
+  .rule-gold{width:22mm;height:2.5pt;background:var(--gold);margin:6mm 0 0}
+
+  h2{font-size:8pt;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600;
+     margin:7mm 0 2.5mm}
+
+  .block{border-top:1px solid var(--ink-30);padding-top:3mm;margin-top:4mm}
+  .q{display:grid;grid-template-columns:6mm 1fr 30mm;gap:3mm;align-items:start;
+     padding:2.2mm 0;border-bottom:1px solid rgba(0,58,65,.12);font-size:9.5pt;line-height:1.35}
+  .q:last-child{border-bottom:0}
+  .q .n{font-weight:700;font-size:8pt;color:var(--teal);padding-top:.6mm}
+  .q .t strong{font-weight:600}
+  .q .t span{display:block;color:var(--ink-75);font-size:8.5pt;margin-top:.6mm}
+  .boxes{display:flex;gap:2.5mm;justify-content:flex-end;padding-top:.4mm}
+  .box{width:5mm;height:5mm;border:1px solid var(--ink);background:#fff}
+  .scale{display:flex;gap:2.5mm;justify-content:flex-end;font-size:6.5pt;letter-spacing:.06em;
+         text-transform:uppercase;color:var(--teal);margin-bottom:1mm}
+  .scale span{width:5mm;text-align:center}
+
+  .eval{margin-top:5mm;background:var(--sage);padding:6mm 7mm;
+        clip-path:polygon(0 0,100% 0,100% calc(100% - 7mm),calc(100% - 7mm) 100%,0 100%)}
+  .eval h3{font-size:11pt;margin-bottom:2.5mm}
+  .eval-row{display:grid;grid-template-columns:26mm 1fr;gap:4mm;font-size:9.5pt;line-height:1.4;
+            padding:1.8mm 0;border-top:1px solid var(--ink-30)}
+  .eval-row b{font-weight:700}
+  .note{margin-top:4mm;font-size:8.5pt;line-height:1.45;color:var(--ink-75)}
+
+  footer{margin-top:auto;padding-top:5mm;border-top:1px solid var(--ink-30);
+         display:flex;justify-content:space-between;align-items:flex-end;font-size:7.5pt;color:var(--ink-75)}
+  footer a{color:var(--ink);text-decoration:none;font-weight:600}
+  .pending{color:#96305C;font-style:italic}
+</style>
+</head>
+<body>
+
+<!-- ================= Seite 1 ================= -->
+<div class="page">
+  <div class="facet"></div>
+  <header>
+    <div class="brand">Fabrica Nova</div>
+    <div class="kicker">Selbstcheck · 10 Minuten</div>
+  </header>
+
+  <h1>Der Zettelwirtschaft-Check</h1>
+  <p class="lede">Zwölf Fragen zu den Stellen, an denen in Handwerks- und Produktionsbetrieben
+  am häufigsten Geld liegen bleibt. Kreuzen Sie spontan an — nicht wie es sein soll,
+  sondern wie es gestern war.</p>
+  <div class="rule-gold"></div>
+
+  <div class="block">
+    <h2>A · Vom Auftrag zur Baustelle</h2>
+    <div class="scale"><span>Ja</span><span>Teils</span><span>Nein</span></div>
+    <div class="q"><span class="n">01</span><span class="t"><strong>Jeder Auftrag ist digital erfasst, bevor die erste Stunde darauf läuft.</strong><span>Kein Zettel, keine Mail, kein Zuruf als einzige Quelle.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+    <div class="q"><span class="n">02</span><span class="t"><strong>Wer auf die Baustelle fährt, sieht dort dieselben Informationen wie das Büro.</strong><span>Aufmaß, Material, Ansprechpartner, Sonderabsprachen.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+    <div class="q"><span class="n">03</span><span class="t"><strong>Änderungen beim Kunden landen noch am selben Tag im System.</strong><span>Nachträge gehen sonst am häufigsten verloren.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+  </div>
+
+  <div class="block">
+    <h2>B · Zeit und Material</h2>
+    <div class="scale"><span>Ja</span><span>Teils</span><span>Nein</span></div>
+    <div class="q"><span class="n">04</span><span class="t"><strong>Arbeitszeiten sind je Auftrag erfasst, nicht nur je Tag.</strong><span>Ohne Auftragsbezug lässt sich keine Nachkalkulation rechnen.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+    <div class="q"><span class="n">05</span><span class="t"><strong>Materialentnahmen werden dem Auftrag zugeordnet.</strong><span>Auch die kleinen aus dem Lager und vom Fahrzeug.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+    <div class="q"><span class="n">06</span><span class="t"><strong>Sie wissen bei laufenden Aufträgen, ob Sie im Budget sind.</strong><span>Vor der Abrechnung, nicht danach.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+  </div>
+
+  <div class="block">
+    <h2>C · Abrechnung</h2>
+    <div class="scale"><span>Ja</span><span>Teils</span><span>Nein</span></div>
+    <div class="q"><span class="n">07</span><span class="t"><strong>Sie können belegen, dass jeder erledigte Auftrag abgerechnet wurde.</strong><span>Nicht vermuten — im System abgleichen können.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+    <div class="q"><span class="n">08</span><span class="t"><strong>Zwischen Fertigstellung und Rechnung liegen selten mehr als fünf Tage.</strong><span>Jeder Tag kostet Liquidität und Erinnerungsvermögen.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+    <div class="q"><span class="n">09</span><span class="t"><strong>Die Kundenunterschrift liegt digital vor, wenn sie gebraucht wird.</strong><span>Der häufigste Grund für Streit über Nachträge.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+  </div>
+
+  <footer>
+    <span>Zettelwirtschaft-Check · Seite 1 von 2</span>
+    <span>fabrica-nova.de</span>
+  </footer>
+</div>
+
+<!-- ================= Seite 2 ================= -->
+<div class="page">
+  <div class="facet"></div>
+  <header>
+    <div class="brand">Fabrica Nova</div>
+    <div class="kicker">Auswertung</div>
+  </header>
+
+  <div class="block" style="margin-top:8mm">
+    <h2>D · Steuerung</h2>
+    <div class="scale"><span>Ja</span><span>Teils</span><span>Nein</span></div>
+    <div class="q"><span class="n">10</span><span class="t"><strong>Sie kennen Ihre drei wichtigsten Kennzahlen ohne Rückfrage beim Steuerberater.</strong><span>Und wissen, wie sie sich im letzten Quartal entwickelt haben.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+    <div class="q"><span class="n">11</span><span class="t"><strong>Nach Abschluss vergleichen Sie kalkulierte mit tatsächlichen Kosten.</strong><span>Systematisch, nicht nur wenn es schiefgegangen ist.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+    <div class="q"><span class="n">12</span><span class="t"><strong>Wenn morgen eine Schlüsselperson ausfällt, arbeitet der Betrieb weiter.</strong><span>Wissen im Kopf ist der teuerste Zettel von allen.</span></span><span class="boxes"><span class="box"></span><span class="box"></span><span class="box"></span></span></div>
+  </div>
+
+  <div class="eval">
+    <h3>Ihre Auswertung</h3>
+    <p class="note" style="margin-top:0;margin-bottom:3mm">Zählen Sie: <b>Ja = 2 Punkte</b>, <b>Teils = 1</b>, <b>Nein = 0</b>. Maximal 24 Punkte.</p>
+    <div class="eval-row"><b>19 – 24</b><span>Ihre Abläufe tragen. Der Hebel liegt jetzt in der Steuerung: aus den vorhandenen Daten Entscheidungen ableiten, statt weitere zu sammeln.</span></div>
+    <div class="eval-row"><b>11 – 18</b><span>Der typische Befund. Einzelne Schritte sind digital, die Kette hat Lücken — und genau an den Übergängen entstehen die Verluste. Hier wirken Quick-Wins am schnellsten.</span></div>
+    <div class="eval-row"><b>0 – 10</b><span>Viel Substanz liegt frei. Erfahrungswert aus unseren Projekten: die ersten messbaren Effekte entstehen in Wochen, nicht in Quartalen — wenn man beim Auftragsdurchlauf anfängt und nicht bei der Software.</span></div>
+  </div>
+
+  <p class="note">Ein Hinweis aus der Praxis: Fragen 07 und 09 zusammen erklären in kleinen Betrieben
+  regelmäßig Umsatzverluste im Bereich von einigen Prozent. In einem unserer Projekte waren es
+  bis zu 5&nbsp;% — verursacht durch verlorene Zettel, nicht durch schlechte Arbeit.</p>
+
+  <div class="block" style="margin-top:6mm">
+    <h2>Wenn Sie das einordnen möchten</h2>
+    <p class="lede" style="font-size:10pt">Schicken Sie uns Ihre Punktzahl, oder auch nur die drei Fragen,
+    bei denen Sie gezögert haben. Wir sagen Ihnen in einem 30-minütigen Gespräch, wo wir
+    den schnellsten Hebel sehen — und ob es dafür überhaupt Beratung braucht.</p>
+    <p class="note" style="margin-top:3mm">
+      <b>info@fabricanova.de</b>
+    </p>
+  </div>
+
+  <footer>
+    <span>Zettelwirtschaft-Check · Seite 2 von 2 · Entwurf zur Freigabe</span>
+    <span>fabrica-nova.de</span>
+  </footer>
+</div>
+
+</body>
+</html>

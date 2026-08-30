@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="de" class="snap-page">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fabrica Nova — Prozessberatung für Handwerk und Mittelstand</title>
+<meta name="description" content="Fabrica Nova ist eine Boutique-Beratung für Handwerksbetriebe und produzierende KMU: Prozesse und Digitalisierung, Unternehmensführung, Nachfolge und Übernahmen. Erste messbare Effekte in Wochen.">
+
+<!-- TODO vor Livegang: echte Domain in canonical und og:url eintragen. -->
+<link rel="canonical" href="https://www.fabrica-nova.de/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Fabrica Nova">
+<meta property="og:title" content="Unternehmensführungs- und Prozessberatung">
+<meta property="og:description" content="Pragmatische Lösungen für Handwerk und produzierenden Mittelstand.">
+<meta property="og:url" content="https://www.fabrica-nova.de/">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="theme-color" content="#FDF6EA">
+<!-- Aus assets/fabrica-nova-icon.png erzeugt. Für ein scharfes Favicon in allen
+     Größen sollte später eine echte SVG-Version aus der Logo-Vektordatei folgen. -->
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preload" href="assets/fonts/hanken-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/hanken-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+
+<!-- Setzt sofort eine Markierung, dass JavaScript läuft. Fehlt sie (Lockdown-Modus,
+     Inhaltsblocker, alte Engine, Skriptfehler), schaltet das CSS den Projekte-Slider
+     auf eine reine Wisch-Bedienung um — siehe html:not(.js) in styles.css. -->
+<script>document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#hero" class="brand-mark">
+      <img class="wordmark" src="assets/fabrica-nova-wordmark.png" alt="Fabrica Nova">
+    </a>
+    <nav class="site-nav" id="site-nav">
+      <ul class="nav-list">
+        <li><a href="#themenfelder">Themenfelder</a></li>
+        <li><a href="#vorgehen">Vorgehen</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#cases">Projekte</a></li>
+      </ul>
+      <a href="#kontakt" class="nav-cta">Erstgespräch</a>
+      <button type="button" class="nav-burger" aria-expanded="false" aria-controls="nav-panel" aria-label="Menü öffnen">
+        <span class="burger-lines" aria-hidden="true"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobiles Vollbildmenü: bei fünf Zielen kollidierten Logo, Navigation und CTA
+     auf 390 px in einer Zeile. -->
+<div class="nav-panel" id="nav-panel" hidden>
+  <ul>
+    <li><a href="#themenfelder">Themenfelder</a></li>
+    <li><a href="#vorgehen">Vorgehen</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#cases">Projekte</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#kontakt" class="nav-panel-cta">Erstgespräch anfragen</a>
+</div>
+
+<main>
+
+  <section id="hero" class="snap-section hero">
+    <div class="wrap">
+      <div class="hero-facet"><img src="assets/fabrica-nova-logo.png" alt="Fabrica Nova"></div>
+      <div class="hero-inner">
+        <!-- Positionierung: Nutzen statt Kategorie. "Exzellenz im Mittelstand" konnte
+             über jeder Beratungsseite stehen. Alternativen, falls die Tonalität zu
+             direkt ist: "Aus Aufwand wird Marge." / "Vier Wochen bis zum ersten Effekt." -->
+        <h1>Unternehmensführungs-<br>und Prozessberatung</h1>
+        <p class="lede">Pragmatische Lösungen für Handwerk und produzierenden Mittelstand.</p>
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn-primary">Erstgespräch</a>
+          <a href="#cases" class="btn-quiet">Projekte ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="themenfelder" class="snap-section fields">
+    <div class="wrap">
+      <span class="section-label">Themenfelder</span>
+      <div class="fields-grid">
+
+        <div class="field-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <svg class="facet-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                <path d="M1 1H31V22L22 31H1Z" fill="none" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <h3>Prozesse &amp; Digitalisierung</h3>
+              <p class="field-claim">Struktur statt Zettelwirtschaft — Abläufe, die Zeit im Betrieb freisetzen statt sie zu verwalten.</p>
+              <!-- Führt zum passenden Referenzprojekt im Abschnitt "Projekte". -->
+              <a class="flip-btn" href="#cases" data-case="1">
+                <span class="flip-btn-label">Details</span><span class="flip-btn-mark" aria-hidden="true"></span>
+                <span class="sr-only"> — Referenzprojekt: Fertigender Mittelstand</span>
+              </a>
+            </div>
+            <div class="flip-back" id="feld-1-details">
+              <h4>Struktur statt Zettelwirtschaft</h4>
+              <ul>
+                <li>Ende zu Ende Prozessketten ermöglichen eine strukturierte Wertgenerierung, pragmatisch und effizient.</li>
+                <li>Angewandte Digitalisierung schafft echten Mehrwert, keine Buzzwords.</li>
+              </ul>
+              <!-- Sichtbarer Klickweg, wenn die Karte per Hover gedreht ist. Doppelt zum
+                   Link auf der Vorderseite, deshalb aus Tab-Reihenfolge und Vorlesemodus genommen. -->
+              <a class="flip-btn flip-btn-back" href="#cases" data-case="1" tabindex="-1" aria-hidden="true">
+                <span class="flip-btn-label">Details</span><span class="flip-btn-mark" aria-hidden="true"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <svg class="facet-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                <path d="M1 1H31V22L22 31H1Z" fill="none" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <h3>Unternehmens-<br>führung</h3>
+              <p class="field-claim">Entscheiden mit Zahlen statt Gefühl — Kennzahlen, die den nächsten Schritt begründen.</p>
+              <!-- Führt zum passenden Referenzprojekt im Abschnitt "Projekte". -->
+              <a class="flip-btn" href="#cases" data-case="2">
+                <span class="flip-btn-label">Details</span><span class="flip-btn-mark" aria-hidden="true"></span>
+                <span class="sr-only"> — Referenzprojekt: Familiengeführte Schreinerei</span>
+              </a>
+            </div>
+            <div class="flip-back" id="feld-2-details">
+              <h4>Ressourcen im Blick</h4>
+              <ul>
+                <li>Die richtigen Entscheidungen werden datenbasiert getroffen, informierter Fahrplan statt Blindflug.</li>
+                <li>Analytische Dashboards für eine gezielte Unternehmenssteuerung, strategisches Wachstum statt Irrfahrt.</li>
+              </ul>
+              <!-- Sichtbarer Klickweg, wenn die Karte per Hover gedreht ist. Doppelt zum
+                   Link auf der Vorderseite, deshalb aus Tab-Reihenfolge und Vorlesemodus genommen. -->
+              <a class="flip-btn flip-btn-back" href="#cases" data-case="2" tabindex="-1" aria-hidden="true">
+                <span class="flip-btn-label">Details</span><span class="flip-btn-mark" aria-hidden="true"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <svg class="facet-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                <path d="M1 1H31V22L22 31H1Z" fill="none" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <h3>Nachfolgeregelung &amp; Übernahmen</h3>
+              <p class="field-claim">Fortbestand und Wachstum als strategische Aufgabe — Nachfolge, Verkauf, Zukauf.</p>
+              <!-- Führt zum passenden Referenzprojekt im Abschnitt "Projekte". -->
+              <a class="flip-btn" href="#cases" data-case="3">
+                <span class="flip-btn-label">Details</span><span class="flip-btn-mark" aria-hidden="true"></span>
+                <span class="sr-only"> — Referenzprojekt: Familiengeführtes Handwerksunternehmen</span>
+              </a>
+            </div>
+            <div class="flip-back" id="feld-3-details">
+              <h4>Gestärkt in die Zukunft</h4>
+              <ul>
+                <li>Der Fortbestand des Unternehmens ist eine strategische Aufgabe, ob Verkauf oder Nachfolge.</li>
+                <li>Unternehmenskäufe bieten attraktive Wachstumschancen, ausschlaggebend für Erfolg sind eine abgestimmte Strategie, sauberes Kalkül und strukturiertes Vorgehen.</li>
+              </ul>
+              <!-- Sichtbarer Klickweg, wenn die Karte per Hover gedreht ist. Doppelt zum
+                   Link auf der Vorderseite, deshalb aus Tab-Reihenfolge und Vorlesemodus genommen. -->
+              <a class="flip-btn flip-btn-back" href="#cases" data-case="3" tabindex="-1" aria-hidden="true">
+                <span class="flip-btn-label">Details</span><span class="flip-btn-mark" aria-hidden="true"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       Signaturmoment: die Facette baut die drei Projektphasen auf, während
+       die Fläche stehen bleibt. Bewusst als Fortschritt gebaut, nicht als
+       Effekt — ohne JavaScript, bei reduzierter Bewegung und auf kleinen
+       Flächen sind alle drei Phasen gleichzeitig sichtbar. Der Inhalt hängt
+       nie an der Animation.
+       ====================================================================== -->
+  <section id="vorgehen" class="approach-pin">
+    <div class="pin-stage">
+      <div class="wrap pin-grid">
+
+        <div class="pin-text">
+          <span class="section-label">Vorgehen</span>
+          <p class="pin-claim">Wir glauben an spürbare Effekte und arbeiten deshalb nach einem Prinzip: <strong class="emph">Veränderung</strong>.</p>
+
+          <ol class="phase-list">
+            <li class="phase">
+              <span class="phase-num">01</span>
+              <div class="phase-body">
+                <h3>Diagnose</h3>
+                <p>Prozess dokumentieren, Aufwandstreiber messen, Potenzial benennen.</p>
+              </div>
+            </li>
+            <li class="phase">
+              <span class="phase-num">02</span>
+              <div class="phase-body">
+                <h3>Zielbild</h3>
+                <p>Zielprozess entwerfen, Hebel priorisieren, Aufwand gegen Wirkung abwägen.</p>
+              </div>
+            </li>
+            <li class="phase">
+              <span class="phase-num">03</span>
+              <div class="phase-body">
+                <h3>Umsetzung</h3>
+                <!-- Geschütztes Leerzeichen vor "messen": verhindert, dass das Wort
+                     allein auf der letzten Zeile steht. -->
+                <p>Quick Wins sofort realisieren, Zielprozess verabschieden, Wirkung nachverfolgen und&nbsp;messen.</p>
+              </div>
+            </li>
+          </ol>
+
+          <p class="pin-note">Dabei gilt immer <strong class="emph">Pragmatismus</strong> und <strong class="emph">Lösungsorientierung</strong> — für schnelle, messbare <strong class="emph">Effekte</strong>.</p>
+        </div>
+
+        <div class="pin-visual" aria-hidden="true">
+          <span class="pf pf-1"></span>
+          <span class="pf pf-2"></span>
+          <span class="pf pf-3"><img class="pf-logo" src="assets/fabrica-nova-icon-sage.png" alt="" aria-hidden="true"></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="snap-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-label">Team</span>
+        <h2>Drei Perspektiven, eine Vision.</h2>
+      </div>
+      <div class="team-grid-outer">
+        <div class="team-grid">
+
+        <!-- Rollenbezeichnungen aus den Profiltexten abgeleitet — bei Bedarf anpassen.
+             Persönliche Kontaktwege (E-Mail/LinkedIn) folgen in Welle 2, sobald die Daten vorliegen. -->
+
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="assets/team/team-michael-axenbeck.jpg" alt="Porträt von Michael Axenbeck">
+          </div>
+          <div class="team-ident">
+            <strong class="team-name">Michael Axenbeck</strong>
+            <span class="team-role">Unternehmertum &amp; Handwerk</span>
+            <p class="team-bio">Über 10 Jahre kaufmännischer Geschäftsführer im Handwerk.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="assets/team/team-sebastian-ifland.jpg" alt="Porträt von Dr. Sebastian Ifland">
+          </div>
+          <div class="team-ident">
+            <strong class="team-name">Dr. Sebastian Ifland</strong>
+            <span class="team-role">Digitalisierung &amp; Steuerung</span>
+            <p class="team-bio">Über 6 Jahre Managementberatung, Promotion in Wirtschaftsinformatik, IT &amp; kaufmännische Steuerung.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="assets/team/team-bastian-richter.jpg" alt="Porträt von Bastian Richter">
+          </div>
+          <div class="team-ident">
+            <strong class="team-name">Bastian Richter</strong>
+            <span class="team-role">Prozesse &amp; Strategie</span>
+            <p class="team-bio">Über 6 Jahre internationale Strategie- und Prozessberatung, 2 Jahre Prokurist im Handwerk.</p>
+          </div>
+        </div>
+
+        </div>
+
+        <!-- Positionsanzeige, nur auf schmalen Flächen sichtbar: dort ist das Team
+             ein horizontales Karussell und man sieht eine Person plus Anschnitt.
+             Rein informativ, deshalb aria-hidden. -->
+        <div class="team-dots" aria-hidden="true">
+          <span class="is-on"></span><span></span><span></span>
+        </div>
+
+        <!-- Vorher aria-hidden, kein Link und erst ab 1180 px sichtbar — also ein
+             Hinweis, dem niemand folgen konnte. Jetzt ein echter Link auf den
+             Kontaktabschnitt; sobald es eine Karriereseite gibt, dorthin umhängen. -->
+        <a class="team-cta" href="#kontakt">
+          <span class="team-cta-arrow" aria-hidden="true"></span>
+          <span class="team-cta-label">Werde Teil<br>des Teams</span>
+        </a>
+      </div>
+
+      <p class="team-statement">Wissenschaft &amp; IT, Unternehmertum im Handwerk, internationale Prozess- &amp; Managementberatung für Lösungen, die im Mittelstand wirken.</p>
+    </div>
+  </section>
+
+  <section id="cases" class="snap-section">
+    <div class="cases-inner">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-label">Projekte</span>
+        <h2>Ausgewählte Projekte.</h2>
+      </div>
+    </div>
+
+    <div class="case-stage">
+      <div class="wrap">
+
+        <section class="case-slider" aria-label="Projekt-Übersicht" data-interval="8000">
+
+          <button type="button" class="case-arrow prev" aria-label="Vorheriges Projekt">
+            <span class="tri"></span>
+          </button>
+          <button type="button" class="case-arrow next" aria-label="Nächstes Projekt">
+            <span class="tri"></span>
+          </button>
+
+          <div class="case-track">
+
+            <div class="case-slide">
+              <div class="case-card accent-1">
+                <div class="case-top">
+                  <div class="case-meta">
+                    <span class="case-tag">~300 Mitarbeitende &middot; &gt;50 Mio. &euro; Umsatz</span>
+                    <h3>Fertigender Mittelstand &amp; Serviceprovider</h3>
+                  </div>
+                  <div class="case-result">
+                    <span class="case-result-label">Ergebnis</span>
+                    <span class="kpi-figure">&minus;60&nbsp;%</span>
+                    <span class="kpi-ref">Prozesszeit — von 20 Minuten auf 5, in unter vier Wochen</span>
+                  </div>
+                </div>
+                <dl class="case-details">
+                  <div><dt>Situation</dt><dd>Das Kernwachstumsfeld lief manuell, fehleranfällig und ohne Anbindung an die übrigen Abläufe. Die Prognose: zunehmend schlechter.</dd></div>
+                  <div><dt>Hebel</dt><dd>Prozess dokumentiert, Aufwandstreiber identifiziert, Abrechnung automatisiert. Erste Quick-Wins per AI-Tools schon während der Analyse.</dd></div>
+                  <div><dt>Effekt</dt><dd>Zielprozess in unter vier Wochen verabschiedet und in Umsetzung. Aus 20 Minuten Bearbeitungszeit wurden 5.</dd></div>
+                </dl>
+                <p class="case-more"><a href="projekt-1.html">Fall im Detail<span class="case-more-mark" aria-hidden="true"></span><span class="sr-only"> — Fertigender Mittelstand</span></a></p>
+              </div>
+            </div>
+
+            <div class="case-slide">
+              <div class="case-card accent-2">
+                <div class="case-top">
+                  <div class="case-meta">
+                    <span class="case-tag">~50 Mitarbeitende &middot; &gt;5 Mio. &euro; Umsatz</span>
+                    <h3>Familiengeführte Schreinerei</h3>
+                  </div>
+                  <div class="case-result">
+                    <span class="case-result-label">Ergebnis</span>
+                    <span class="kpi-figure">+5&nbsp;%</span>
+                    <span class="kpi-ref">Umsatz — vorher über verlorene Zettel nicht abgerechnet</span>
+                  </div>
+                </div>
+                <dl class="case-details">
+                  <div><dt>Situation</dt><dd>Die Auftrags- und Rechnungsdaten zeigten ein verbreitetes Muster: verlorene Zettel, nicht abgerechnete Aufträge, entgangener Umsatz.</dd></div>
+                  <div><dt>Hebel</dt><dd>Ein System für Materialwirtschaft, Auftragsplanung, Aufmaß, Dokumentation und Kundenunterschrift — auf PC, Tablet und Handy.</dd></div>
+                  <div><dt>Effekt</dt><dd>Transparenz über jeden Auftrag, bis zu 5&nbsp;% Umsatz gesichert, reduzierter Verwaltungsaufwand.</dd></div>
+                </dl>
+                <p class="case-more"><a href="projekt-2.html">Fall im Detail<span class="case-more-mark" aria-hidden="true"></span><span class="sr-only"> — Familiengeführte Schreinerei</span></a></p>
+              </div>
+            </div>
+
+            <div class="case-slide">
+              <div class="case-card accent-3">
+                <div class="case-top">
+                  <div class="case-meta">
+                    <span class="case-tag">~30 Mitarbeitende &middot; &gt;6 Mio. &euro; Umsatz</span>
+                    <h3>Familiengeführtes Handwerksunternehmen</h3>
+                  </div>
+                  <div class="case-result">
+                    <span class="case-result-label">Ergebnis</span>
+                    <span class="kpi-figure">3&times;</span>
+                    <span class="kpi-ref">Ergebniseffekt aus der Übernahme — Umsatz, Marge, Portfolio</span>
+                  </div>
+                </div>
+                <dl class="case-details">
+                  <div><dt>Situation</dt><dd>Wachstum aus dem Bestand war ausgereizt. Die Alternative zu Abwarten: eine belastbare Wachstumsstrategie.</dd></div>
+                  <div><dt>Hebel</dt><dd>Übernahme eines geschäftsfeldnahen Betriebs. Wertschöpfungskette erweitern, Administration zentralisieren, Kundenstamm zusammenführen.</dd></div>
+                  <div><dt>Effekt</dt><dd>Dreifacher Ergebniseffekt: zusätzlicher Umsatz, bessere Marge, breiteres Portfolio.</dd></div>
+                </dl>
+                <p class="case-more"><a href="projekt-3.html">Fall im Detail<span class="case-more-mark" aria-hidden="true"></span><span class="sr-only"> — Familiengeführtes Handwerksunternehmen</span></a></p>
+              </div>
+            </div>
+
+            <!-- Klon der ersten Folie für den nahtlosen Vorwärtslauf -->
+            <div class="case-slide" aria-hidden="true">
+              <div class="case-card accent-1">
+                <div class="case-top">
+                  <div class="case-meta">
+                    <span class="case-tag">~300 Mitarbeitende &middot; &gt;50 Mio. &euro; Umsatz</span>
+                    <h3>Fertigender Mittelstand &amp; Serviceprovider</h3>
+                  </div>
+                  <div class="case-result">
+                    <span class="case-result-label">Ergebnis</span>
+                    <span class="kpi-figure">&minus;60&nbsp;%</span>
+                    <span class="kpi-ref">Prozesszeit — von 20 Minuten auf 5, in unter vier Wochen</span>
+                  </div>
+                </div>
+                <dl class="case-details">
+                  <div><dt>Situation</dt><dd>Das Kernwachstumsfeld lief manuell, fehleranfällig und ohne Anbindung an die übrigen Abläufe. Die Prognose: zunehmend schlechter.</dd></div>
+                  <div><dt>Hebel</dt><dd>Prozess dokumentiert, Aufwandstreiber identifiziert, Abrechnung automatisiert. Erste Quick-Wins per AI-Tools schon während der Analyse.</dd></div>
+                  <div><dt>Effekt</dt><dd>Zielprozess in unter vier Wochen verabschiedet und in Umsetzung. Aus 20 Minuten Bearbeitungszeit wurden 5.</dd></div>
+                </dl>
+                <p class="case-more"><a href="projekt-1.html" tabindex="-1">Fall im Detail<span class="case-more-mark" aria-hidden="true"></span><span class="sr-only"> — Fertigender Mittelstand</span></a></p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="case-dots">
+            <span class="case-counter"><b class="cc-now">01</b> / 03</span>
+            <button type="button" class="dot is-active" data-index="0" aria-label="Projekt 1 anzeigen"></button>
+            <button type="button" class="dot" data-index="1" aria-label="Projekt 2 anzeigen"></button>
+            <button type="button" class="dot" data-index="2" aria-label="Projekt 3 anzeigen"></button>
+          </div>
+        </section>
+
+      </div>
+    </div>
+    </div><!-- /.cases-inner — dieses schließende div fehlte, dafür stand eines
+             zu viel in der Themenfelder-Sektion. -->
+  </section>
+
+
+  <section id="kontakt" class="snap-section contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-label">Kontakt</span>
+        <h2>Reden wir 30 Minuten. Ohne Agenda.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-text">
+          <p>Ein erstes Gespräch kostet nichts und verpflichtet zu nichts. Sie schildern die Situation, wir sagen offen, ob wir der richtige Partner sind — und wo wir den schnellsten Hebel sehen.</p>
+        </div>
+        <div class="contact-data">
+          <a class="contact-line" href="mailto:info@fabricanova.de">
+            <span class="contact-line-label">E-Mail</span>
+            <span class="contact-line-value">info@fabricanova.de</span>
+          </a>
+          <div class="contact-line">
+            <span class="contact-line-label">Standort</span>
+            <span class="contact-line-value">München, Unterföhring</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inhaltsangebot mit Gegenwert: der niedrigschwellige Einstieg für
+           alle, die noch nicht sprechen wollen. Ohne Formular und ohne
+           Tracking — die Anfrage läuft per E-Mail, der Versand von Hand.
+           Sobald ein Formular kommt, gehört in die Datenschutzerklärung ein
+           Abschnitt dazu. -->
+      <div class="offer">
+        <div class="offer-text">
+          <span class="offer-label">Für kleine Betriebe</span>
+          <h3>Der Zettelwirtschaft-Check</h3>
+          <p>Zwölf Fragen zu Auftragsannahme, Aufmaß, Zeiterfassung und Abrechnung. In zehn Minuten selbst ausgefüllt — und Sie wissen, wo im Betrieb Geld liegen bleibt.</p>
+        </div>
+        <div class="offer-actions">
+          <a class="btn-primary" href="mailto:info@fabricanova.de?subject=Zettelwirtschaft-Check%20anfordern&amp;body=Guten%20Tag%2C%0A%0Abitte%20senden%20Sie%20mir%20den%20Zettelwirtschaft-Check%20zu.%0A%0ABetrieb%3A%20%0AMitarbeitende%3A%20%0A%0AVielen%20Dank">Per E-Mail anfordern</a>
+          <a class="btn-quiet" href="assets/Fabrica-Nova-Zettelwirtschaft-Check.pdf" target="_blank" rel="noopener">Direkt öffnen (PDF, 2 Seiten)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Fabrica Nova</div>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="mailto:info@fabricanova.de">info@fabricanova.de</a>
+        <a href="#kontakt">Erstgespräch anfragen</a>
+      </div>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fabrica Nova</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Kleiner Helfer für Media-Query-Listener. Grund: matchMedia(...).addEventListener
+   gibt es in Safari erst ab iOS 14; davor existiert nur das alte addListener.
+   Ohne Rückfallebene wirft die Zeile einen TypeError und reißt den restlichen
+   Skriptblock mit — auf einem älteren iPhone wären dann zum Beispiel Wischen und
+   automatischer Lauf im Projekte-Slider tot, obwohl die Pfeile noch gehen.
+   window.fnOnMedia(mql, fn) kapselt beide Wege und schluckt Fehler. */
+window.fnOnMedia = function (mql, fn) {
+  try {
+    if (mql.addEventListener) mql.addEventListener('change', fn);
+    else if (mql.addListener) mql.addListener(fn);
+  } catch (e) { /* ohne Listener funktioniert alles weiter, nur nicht reaktiv */ }
+};
+</script>
+
+<script>
+(function () {
+  document.querySelectorAll('.case-slider').forEach(function (slider) {
+    var track = slider.querySelector('.case-track');
+    var dots = slider.querySelectorAll('.dot');
+    var prevBtn = slider.querySelector('.case-arrow.prev');
+    var nextBtn = slider.querySelector('.case-arrow.next');
+    var real = dots.length;   // 3 real slides (slide index real = trailing clone of slide 0)
+    var index = 0;
+    var counter = slider.querySelector('.cc-now');
+
+    /* Automatischer Durchlauf ("Laufbanner"). Intervall steht im Markup
+       (data-interval) und ist bewusst lang gewählt: die Karten enthalten Text,
+       der gelesen werden soll. Der Lauf hält an, sobald jemand mit der Maus
+       darüber ist, etwas darin den Fokus hat, gewischt wird oder der Abschnitt
+       nicht im Bild ist — und startet nicht, wenn der Nutzer im System
+       reduzierte Bewegung eingestellt hat. */
+    var interval = parseInt(slider.dataset.interval || '8000', 10);
+    var timer = null;
+    var paused = false;
+    var offscreen = false;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    function play() {
+      stop();
+      if (reduced.matches || paused || offscreen) return;
+      timer = setInterval(next, interval);
+    }
+
+    function restart() { stop(); play(); }
+
+    function goTo(i, animate) {
+      track.style.transition = animate === false ? 'none' : '';
+      track.style.transform = 'translateX(-' + (i * 100) + '%)';
+      if (animate === false) { void track.offsetHeight; }
+    }
+
+    function updateDots(i) {
+      dots.forEach(function (d, di) { d.classList.toggle('is-active', di === (i % real)); });
+      if (counter) counter.textContent = ('0' + ((i % real) + 1)).slice(-2);
+    }
+
+    function next() {
+      index++;
+      goTo(index);
+      updateDots(index);
+      if (index === real) {
+        track.addEventListener('transitionend', function handler() {
+          track.removeEventListener('transitionend', handler);
+          index = 0;
+          goTo(0, false);
+        });
+      }
+    }
+
+    function prev() {
+      if (index === 0) {
+        index = real - 1;
+        goTo(index, false);
+        updateDots(index);
+        return;
+      }
+      index--;
+      goTo(index);
+      updateDots(index);
+    }
+
+    function jumpTo(realIndex) {
+      index = realIndex;
+      goTo(index);
+      updateDots(index);
+    }
+
+    nextBtn.addEventListener('click', function () { next(); restart(); });
+    prevBtn.addEventListener('click', function () { prev(); restart(); });
+
+    dots.forEach(function (dot, di) {
+      dot.addEventListener('click', function () { jumpTo(di); restart(); });
+    });
+
+    /* Anhalten, solange jemand liest oder bedient — aber nur bei einem echten
+       Zeigegerät. Touchgeräte feuern beim Antippen ein emuliertes mouseenter
+       ohne späteres mouseleave: der Lauf stand danach dauerhaft still. */
+    if (window.matchMedia('(hover: hover)').matches) {
+      slider.addEventListener('mouseenter', function () { paused = true; stop(); });
+      slider.addEventListener('mouseleave', function () { paused = false; play(); });
+    }
+    /* Pause bei Fokus nur, wenn der Fokus sichtbar gesetzt wurde (Tastatur).
+       Ein Fingertipp auf Pfeil oder Punkt hinterlässt den Fokus auf dem Button —
+       ohne diese Unterscheidung stand der Lauf danach für immer still. */
+    slider.addEventListener('focusin', function (e) {
+      var t = e.target;
+      var keyboard = !!(t && t.matches) && (function () {
+        // Kennt der Browser :focus-visible nicht (Safari vor 15.4), lieber NICHT
+        // pausieren: sonst stünde der Lauf nach jedem Fingertipp still.
+        try { return t.matches(':focus-visible'); } catch (err) { return false; }
+      })();
+      if (keyboard) { paused = true; stop(); }
+    });
+    slider.addEventListener('focusout', function () { paused = false; play(); });
+
+    // Im Hintergrundtab nicht weiterlaufen.
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else play();
+    });
+
+    // Nicht im Bild? Dann auch nicht weiterlaufen. In try/catch, damit ein
+    // fehlender oder eigenwilliger IntersectionObserver das Blättern nicht
+    // mitreißt — Kernbedienung vor Komfortfunktion.
+    try {
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          offscreen = !entries[0].isIntersecting;
+          if (offscreen) stop(); else play();
+        }, { threshold: 0.25 }).observe(slider);
+      }
+    } catch (e) { offscreen = false; }
+
+    window.fnOnMedia(reduced, function () { restart(); });
+
+    // Von außen ansteuerbar: die "Details"-Links in den Themenfeldern springen
+    // damit auf das passende Projekt.
+    slider.jumpToCase = function (oneBased) {
+      var i = Math.max(0, Math.min(real - 1, oneBased - 1));
+      jumpTo(i);
+      restart();
+    };
+
+    // --- Touch swipe (mobile): horizontal swipe left/right pages the cases ---
+    var tStartX = null, tStartY = null, tMoved = false, tHoriz = false;
+    slider.addEventListener('touchstart', function (e) {
+      if (e.touches.length > 1) { tStartX = null; return; }
+      tStartX = e.touches[0].clientX;
+      tStartY = e.touches[0].clientY;
+      tMoved = false; tHoriz = false;
+    }, { passive: true });
+    slider.addEventListener('touchmove', function (e) {
+      if (tStartX === null) return;
+      var dx = e.touches[0].clientX - tStartX;
+      var dy = e.touches[0].clientY - tStartY;
+      if (!tMoved && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) {
+        tMoved = true;
+        tHoriz = Math.abs(dx) > Math.abs(dy);
+      }
+      // Lock a horizontal swipe so it pages the slider instead of scrolling the page.
+      if (tMoved && tHoriz) e.preventDefault();
+    }, { passive: false });
+    slider.addEventListener('touchend', function (e) {
+      if (tStartX === null) return;
+      var dx = e.changedTouches[0].clientX - tStartX;
+      var dy = e.changedTouches[0].clientY - tStartY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+        if (dx < 0) next(); else prev();
+        restart();
+      }
+      tStartX = null; tStartY = null;
+    }, { passive: true });
+
+    // --- Trackpad horizontal swipe (desktop): two-finger swipe left/right pages ---
+    var accX = 0, lastWheelX = 0, wheelCd = 0;
+    slider.addEventListener('wheel', function (e) {
+      // Only react to horizontally-dominant gestures; leave vertical scroll to the page.
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      e.preventDefault(); // also suppresses the browser's back/forward swipe
+      var now = Date.now();
+      if (now - lastWheelX > 200) accX = 0; // a pause starts a fresh gesture
+      lastWheelX = now;
+      if (now < wheelCd) return; // swallow leftover momentum after a page turn
+      accX += e.deltaX;
+      if (accX > 50) { next(); restart(); accX = 0; wheelCd = now + 600; }
+      else if (accX < -50) { prev(); restart(); accX = 0; wheelCd = now + 600; }
+    }, { passive: false });
+
+    updateDots(0);
+    play();
+  });
+})();
+</script>
+
+<script>
+/* Themenfelder: der Link "Details" springt zum passenden Referenzprojekt im
+   Abschnitt "Projekte" und stellt den Slider auf diese Folie.
+   Ohne JavaScript bleibt es ein gewöhnlicher Anker auf #cases — man landet dann
+   beim Abschnitt, nur ohne Vorauswahl der Folie. */
+(function () {
+  var slider = document.querySelector('.case-slider');
+
+  document.querySelectorAll('a[data-case]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var n = parseInt(link.dataset.case, 10);
+      if (slider && typeof slider.jumpToCase === 'function' && n) {
+        slider.jumpToCase(n);
+      }
+      // Der Anker im href übernimmt das Scrollen.
+    });
+  });
+})();
+</script>
+
+<script>
+/* Navigation: aktiver Punkt wandert mit dem Scrollen mit (vorher stand
+   aria-current statisch auf "Start"), plus mobiles Vollbildmenü. */
+(function () {
+  /* Der CTA im Menü zeigt auf #kontakt wie der Menüpunkt "Kontakt". Ohne das
+     :not() bekäme auch der Button aria-current und damit die Textfarbe für den
+     aktiven Zustand — hell auf hell, also praktisch unlesbar. */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-list a, .nav-panel a[href^="#"]:not(.nav-panel-cta)'));
+  // section[id] statt .snap-section: der Signaturmoment ist absichtlich keine
+  // Snap-Sektion, soll aber trotzdem im Menü mitmarkiert werden.
+  var sections = document.querySelectorAll('main section[id]');
+
+  function setActive(id) {
+    links.forEach(function (a) {
+      var on = a.getAttribute('href') === '#' + id;
+      if (on) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+
+  if ('IntersectionObserver' in window && sections.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
+  // --- Vollbildmenü ---
+  var burger = document.querySelector('.nav-burger');
+  var panel = document.getElementById('nav-panel');
+  if (!burger || !panel) return;
+
+  function openPanel() {
+    panel.hidden = false;
+    // Ein Frame warten, damit der Übergang greift.
+    requestAnimationFrame(function () { panel.classList.add('is-open'); });
+    burger.setAttribute('aria-expanded', 'true');
+    burger.setAttribute('aria-label', 'Menü schließen');
+    // Kein overflow:hidden am Body — iOS springt dabei an den Seitenanfang.
+    // Das Panel ist selbst scrollbar und per overscroll-behavior gekapselt.
+  }
+
+  function closePanel() {
+    panel.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Menü öffnen');
+    var done = function () { if (!panel.classList.contains('is-open')) panel.hidden = true; };
+    panel.addEventListener('transitionend', function h() { panel.removeEventListener('transitionend', h); done(); });
+    window.setTimeout(done, 400); // Fallback, falls kein transitionend feuert
+  }
+
+  burger.addEventListener('click', function () {
+    if (burger.getAttribute('aria-expanded') === 'true') closePanel(); else openPanel();
+  });
+
+  panel.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closePanel);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') {
+      closePanel();
+      burger.focus();
+    }
+  });
+
+  // Wird das Fenster breit genug für die normale Navigation, Menü schließen.
+  window.fnOnMedia(window.matchMedia('(min-width: 861px)'), function (ev) {
+    if (ev.matches && burger.getAttribute('aria-expanded') === 'true') closePanel();
+  });
+})();
+</script>
+
+<script>
+/* Signaturmoment: Fortschritt der gepinnten Sektion in drei Phasen übersetzen.
+   Progressive Verbesserung — ohne dieses Skript bleiben alle drei Phasen und
+   alle drei Facetten sichtbar. Sequenziert wird nur, wenn genug Platz da ist
+   und der Nutzer keine reduzierte Bewegung angefordert hat. */
+(function () {
+  var section = document.getElementById('vorgehen');
+  if (!section) return;
+  var stage = section.querySelector('.pin-stage');
+  if (!stage) return;
+
+  var canSequence = window.matchMedia('(min-width: 861px) and (min-height: 620px)');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var ticking = false;
+  var active = false;
+
+  function update() {
+    ticking = false;
+    var rect = section.getBoundingClientRect();
+    var travel = rect.height - window.innerHeight;
+    if (travel <= 0) return;
+    var progress = Math.min(1, Math.max(0, -rect.top / travel));
+    // Die erste Phase steht schon, wenn die Fläche ankommt; die dritte etwas
+    // vor dem Ende, damit sie nicht erst beim Verlassen erscheint.
+    var phase = progress >= 0.62 ? 3 : (progress >= 0.28 ? 2 : 1);
+    if (stage.getAttribute('data-phase') !== String(phase)) {
+      stage.setAttribute('data-phase', String(phase));
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }
+
+  function enable() {
+    if (active) return;
+    active = true;
+    stage.classList.add('is-sequenced');
+    stage.setAttribute('data-phase', '1');
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  }
+
+  function disable() {
+    if (!active) return;
+    active = false;
+    stage.classList.remove('is-sequenced');
+    stage.removeAttribute('data-phase');
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onScroll);
+  }
+
+  function sync() {
+    if (canSequence.matches && !reduced.matches) enable(); else disable();
+  }
+
+  window.fnOnMedia(canSequence, sync);
+  window.fnOnMedia(reduced, sync);
+  sync();
+})();
+</script>
+
+<script>
+/* Team auf Touchgeräten: die Karte in der Mitte des Karussells zeigt ihr Foto in
+   Farbe und markiert den passenden Punkt. Auf Geräten mit Maus passiert hier
+   nichts — dort übernimmt der Hover. */
+(function () {
+  var grid = document.querySelector('.team-grid');
+  if (!grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.team-card'));
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.team-dots span'));
+  if (!cards.length) return;
+
+  var touch = window.matchMedia('(hover: none)');
+  var narrow = window.matchMedia('(max-width: 800px)');
+  var io = null;
+
+  function mark(index) {
+    cards.forEach(function (c, i) { c.classList.toggle('is-active', i === index); });
+    dots.forEach(function (d, i) { d.classList.toggle('is-on', i === index); });
+  }
+
+  function enable() {
+    if (io) return;
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) mark(cards.indexOf(entry.target));
+      });
+    }, { root: grid, threshold: 0.75 });
+    cards.forEach(function (c) { io.observe(c); });
+    mark(0);
+  }
+
+  function disable() {
+    if (!io) return;
+    io.disconnect();
+    io = null;
+    cards.forEach(function (c) { c.classList.remove('is-active'); });
+  }
+
+  function sync() {
+    if (touch.matches && narrow.matches) enable(); else disable();
+  }
+
+  window.fnOnMedia(touch, sync);
+  window.fnOnMedia(narrow, sync);
+  sync();
+})();
+</script>
+
+</body>
+</html>

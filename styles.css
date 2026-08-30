@@ -1,0 +1,2314 @@
+/* ==========================================================================
+   Fabrica Nova — Design Tokens
+   ========================================================================== */
+
+/* ==========================================================================
+   Schriften — selbst gehostet
+   Vorher per @import von fonts.googleapis.com. Das überträgt die IP-Adresse
+   jedes Besuchers in die USA (in Deutschland abgemahnt, LG München I,
+   3 O 17493/20) und verzögert den Seitenaufbau um eine zusätzliche Verbindung.
+   Dateien liegen in assets/fonts/, Lizenz: SIL Open Font License 1.1
+   (siehe assets/fonts/LICENSE-Hanken-Grotesk.txt).
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('assets/fonts/hanken-grotesk-latin-300-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/hanken-grotesk-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/hanken-grotesk-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('assets/fonts/hanken-grotesk-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Erweiterter Latin-Bereich (osteuropäische Namen, zusätzliche Währungszeichen).
+   Wird nur geladen, wenn ein Zeichen daraus wirklich vorkommt. */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('assets/fonts/hanken-grotesk-latin-ext-300-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/hanken-grotesk-latin-ext-400-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/hanken-grotesk-latin-ext-600-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('assets/fonts/hanken-grotesk-latin-ext-700-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  /* Palette — named for how they're used, not just hue */
+  --ink:        #003A41; /* primary text, headings */
+  --deep:       #2C3932; /* darkest surface (footer) */
+  --paper:      #FDF6EA; /* page background */
+  --sage:       #ECEBE3; /* quiet secondary surface */
+  --teal:       #68989E; /* muted accent / rule color — Flächen und Linien, nicht Text */
+  --teal-ink:   #3F6F76; /* lesbare Label-Variante auf Creme/Salbei (4,6:1) */
+  --teal-light: #8FBAC0; /* lesbare Variante auf dunklem Grund (Footer) */
+  --gold:       #BFB360; /* signature accent — nur Flächen und Kanten, nie Text */
+  --wine:       #BF6093; /* case-differentiation accent, sparing */
+  --plum:       #400023; /* reserved, not used on this pass */
+
+  --ink-75:     rgba(0, 58, 65, 0.75); /* Sekundärtext in kleinen Größen */
+  --ink-60:     rgba(0, 58, 65, 0.6);  /* nur für große Schrift und Flächen */
+  --ink-30:     rgba(0, 58, 65, 0.3);
+  --paper-soft: rgba(253, 246, 234, 0.6);
+
+  --font-display: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --max-width: 1120px;
+  --gutter: clamp(1.5rem, 5vw, 5rem);
+
+  /* Typo-Skala — genau fünf Textstufen plus eine Display-Stufe für Kennzahlen.
+     Vorher lagen Hero-Unterzeile und Vorgehen-Text auf derselben Größe wie die
+     H1; es gab keine erkennbare Hierarchie. */
+  --t1: clamp(2.5rem, 5.2vw, 3.5rem);   /* H1 */
+  --t2: clamp(1.6rem, 3.2vw, 2.4rem);   /* große Aussagen: Hero-Lede, Vorgehen */
+  --t3: clamp(1.25rem, 2.1vw, 1.6rem);  /* H2, H3 */
+  --t4: 1.05rem;                        /* Fließtext */
+  --t5: 0.8rem;                         /* Labels, Kapitälchen */
+  --display: clamp(2.5rem, 5vw, 3.6rem);/* Kennzahlen in den Projekten */
+
+  /* Facettenmotiv — eine Definition, überall wiederverwendet. */
+  --facet-cut: 22px;
+  --facet-clip: polygon(0 0, 100% 0, 100% calc(100% - var(--facet-cut)), calc(100% - var(--facet-cut)) 100%, 0 100%);
+  --facet-clip-s: polygon(0 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%);
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Das hidden-Attribut muss jede display-Regel schlagen. Ohne diese Zeile hat
+   .nav-panel { display: flex } das UA-eigene display:none überstimmt: das
+   mobile Vollbildmenü lag danach unsichtbar (opacity 0, position fixed,
+   inset 0, z-index 99) über der ganzen Seite und hat jeden Klick im
+   Seiteninhalt abgefangen — Slider-Pfeile, Punkte, Links, Buttons. */
+[hidden] { display: none !important; }
+
+html {
+  scroll-behavior: smooth;
+  /* clip statt hidden: verhindert den horizontalen Scrollbalken, den die
+     volle Breite der Projekte-Bühne (50vw) bei sichtbarer vertikaler
+     Scrollleiste auslöst — ohne einen zweiten Scroll-Container zu erzeugen,
+     der das Scroll-Snapping aushebeln würde. */
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Snap bleibt als Charakter erhalten, ist aber nicht mehr zwingend: bei
+   "mandatory" wurden Inhalte, die höher als der Bildschirm sind, unerreichbar
+   (gemessen: Projekte-Sektion 1022 px auf 844 px Bildschirmhöhe). */
+html.snap-page {
+  scroll-snap-type: y proximity;
+}
+
+/* Auf flachen Fenstern (Handy quer, 13"-Laptops) ganz ohne Snap scrollen. */
+@media (max-height: 800px) {
+  html.snap-page { scroll-snap-type: none; }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.snap-page { scroll-snap-type: none; }
+}
+
+body {
+  margin: 0;
+  /* iOS: den grellblauen Standard-Blitz beim Antippen durch einen dezenten
+     Marken-Ton ersetzen und die automatische Schriftvergrößerung beim Drehen
+     abschalten. */
+  -webkit-tap-highlight-color: rgba(0, 58, 65, 0.08);
+  -webkit-text-size-adjust: 100%;
+  /* ACHTUNG: hier stand overflow-x: hidden. Das macht den Body zum
+     Scroll-Container (overflow-y wird dabei implizit zu auto) und setzt jedes
+     position: sticky darin außer Kraft — der Signaturmoment blieb dadurch
+     nicht stehen. Das Abschneiden übernimmt overflow-x: clip auf <html>;
+     clip erzeugt keinen Scroll-Container. */
+  overflow-x: clip;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400; /* 300 wirkte auf warmem Creme ausgewaschen, besonders unter Windows */
+  font-size: var(--t4);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+p { margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img { max-width: 100%; display: block; }
+
+ul { margin: 0; padding: 0; list-style: none; }
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Layout shell
+   ========================================================================== */
+
+/* max() mit env(): auf dem iPhone im Querformat liegt der Rand sonst unter der
+   Notch bzw. der abgerundeten Ecke. */
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left));
+  padding-right: max(var(--gutter), env(safe-area-inset-right));
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+:root {
+  --notice-h: 0px; /* Entwurfsbanner entfernt */
+  --bar-h: 64px;
+  --header-h: calc(var(--notice-h) + var(--bar-h));
+}
+
+.site-header {
+  position: fixed;
+  top: var(--notice-h);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--bar-h);
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink-30);
+  display: flex;
+  align-items: center;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 0 0 auto; /* sonst schrumpft die Wortmarke neben Navigation + CTA auf 0 */
+}
+
+.brand-mark img {
+  height: 40px;
+  width: auto;
+}
+
+/* Wortmarke als Grafik aus dem Logo (fabrica-nova-wordmark.png) — dieselbe
+   geometrische Schrift wie im Logo (u. a. „A" ohne Querbalken). Höhe bewusst
+   größer als die Nav-Reiter, skaliert leicht mit der Viewport-Breite. */
+.brand-mark .wordmark {
+  height: clamp(14px, 2vw, 22px);
+  width: auto;
+  display: block;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 2.25rem;
+}
+
+/* Primärer Handlungsaufruf — läuft auf jeder Sektion mit. Angeschnittene Ecke
+   als Facettenmotiv, damit der Button zur Marke gehört und nicht zum Baukasten. */
+.site-nav .nav-cta {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 0.62rem 1.15rem;
+  clip-path: var(--facet-clip-s);
+  transition: background 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 0;
+  line-height: 1;
+}
+
+/* Nur für echte Zeigegeräte: auf iOS bleibt ein :hover-Zustand nach dem
+   Antippen hängen, bis irgendwo anders getippt wird. */
+@media (hover: hover) {
+  .site-nav .nav-cta:hover { background: var(--deep); color: var(--paper); }
+  .nav-burger:hover { border-color: var(--ink); }
+  .case-arrow:hover { border-color: var(--ink); background: rgba(0, 58, 65, 0.06); }
+  .btn-primary:hover { background: var(--deep); }
+}
+
+.site-nav .nav-cta:focus-visible {
+  background: var(--deep);
+  color: var(--paper);
+}
+
+.site-nav a {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current] {
+  color: var(--ink);
+  border-color: var(--gold);
+}
+
+/* ==========================================================================
+   Facet motif — the signature element
+   Derived from the diagonal-cut corner in the FN mark. Used exactly once
+   per view as a structural device, never as decoration.
+   ========================================================================== */
+
+.facet-divider {
+  height: 1px;
+  background: var(--ink-30);
+  position: relative;
+  margin: 0 0;
+}
+
+.facet-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 11px;
+  height: 11px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--gold);
+}
+
+.facet-card {
+  clip-path: var(--facet-clip);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .wrap {
+  position: relative;
+}
+
+.hero-inner {
+  max-width: 640px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-facet {
+  position: absolute;
+  top: 50%;
+  right: -2%;
+  transform: translateY(-50%);
+  width: min(32vw, 400px);
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-facet img {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .hero-facet { display: none; }
+}
+
+.hero .kicker {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  font-size: var(--t1);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.hero p.lede {
+  font-size: var(--t2);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--ink-60);
+  max-width: 42ch;
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+.snap-section {
+  min-height: 100svh; /* svh statt vh: iOS-Safari rechnet vh inkl. Adressleiste */
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  /* Optische statt mathematischer Mitte: der Header schob den Inhalt bisher
+     einseitig nach unten und ließ oben eine leere Fläche stehen. */
+  padding-top: var(--header-h);
+  padding-bottom: calc(var(--header-h) * 0.6);
+  position: relative;
+}
+
+.snap-section .wrap {
+  width: 100%;
+}
+
+.section-label {
+  font-size: var(--t5);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-head {
+  margin-bottom: clamp(1.25rem, 3vh, 2rem);
+}
+
+.section-head h2 {
+  font-size: var(--t3);
+  line-height: 1.18;
+}
+
+.fields {
+  position: relative;
+}
+
+.fields::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--gutter);
+  right: var(--gutter);
+  height: 1px;
+  background: var(--ink-30);
+}
+
+.fields::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  transform: translateX(-50%) rotate(45deg);
+  background: var(--gold);
+}
+
+/* ==========================================================================
+   Fields (Leistungsfelder) — three quiet cards
+   ========================================================================== */
+
+.fields-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--ink-30);
+  border: 1px solid var(--ink-30);
+}
+
+.field-card {
+  background: transparent;
+  padding: 0;
+  min-height: clamp(275px, 34vh, 345px);
+  perspective: 1200px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  transform-style: preserve-3d;
+}
+
+/* Der Hover dreht die Karte und zeigt den Detailtext. Geklickt wird nicht
+   gedreht, sondern zum passenden Referenzprojekt gesprungen — deshalb ist
+   "Details" ein Link, kein Schalter. Auf Geräten ohne Hover werden beide
+   Ebenen gestapelt gezeigt (siehe unten), es bleibt also nichts verborgen. */
+@media (hover: hover) and (pointer: fine) {
+  .field-card:hover .flip-inner { transform: rotateY(180deg); }
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--paper);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.flip-front {
+  justify-content: flex-start;
+}
+
+.field-card h3 {
+  font-size: var(--t3);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Nutzenversprechen — steht jetzt sichtbar auf der Vorderseite, statt sich
+   hinter dem Hover zu verstecken. */
+.field-claim {
+  margin-top: 0.85rem;
+  color: var(--ink-75);
+  font-size: clamp(0.9rem, 1.15vw, 0.98rem);
+  line-height: 1.5;
+}
+
+.flip-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--ink-30);
+  padding: 0.3rem 0;
+  font-family: inherit;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+
+.flip-btn:hover,
+.flip-btn:focus-visible { border-bottom-color: var(--ink); }
+
+.flip-btn-mark {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent currentColor;
+}
+
+.flip-btn-mark.rev {
+  border-width: 5px 8px 5px 0;
+  border-color: transparent currentColor transparent transparent;
+}
+
+.flip-back {
+  background: var(--sage);
+  transform: rotateY(180deg);
+  justify-content: flex-start;
+  padding: 1.6rem 1.8rem;
+}
+
+.flip-back h4 {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.7rem;
+}
+
+.flip-back ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.flip-back li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--ink-75);
+  font-size: clamp(0.82rem, 1.05vw, 0.92rem);
+  line-height: 1.45;
+}
+
+.flip-back li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--teal-ink);
+}
+
+.flip-back li.tbd {
+  font-style: italic;
+  color: var(--ink-30);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner { transition: none; }
+}
+
+/* Kleine Flächen: kein Flip, beide Ebenen gestapelt — dort ist Platz genug in
+   der Höhe, und niemand muss eine Interaktion erraten. */
+@media (max-width: 800px) {
+  .fields-grid { grid-template-columns: 1fr; }
+}
+
+/* Dasselbe für alle Geräte ohne Hover (Tablets über 800 px): ohne Zeigegerät
+   gibt es keinen Auslöser für die Drehung, also darf nichts dahinter liegen. */
+@media (max-width: 800px), (hover: none) {
+  .field-card { min-height: 0; perspective: none; }
+  .flip-inner { transform: none !important; transform-style: flat; transition: none; }
+
+  .flip-front,
+  .flip-back {
+    position: static;
+    inset: auto;
+    transform: none;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    height: auto;
+  }
+
+  .flip-front { padding-bottom: 1.1rem; }
+
+  .flip-back {
+    /* paper statt transparent: die Kachelgruppe nutzt ihren Hintergrund für die
+       1-px-Trennlinien, transparent hätte dieses Grau durchscheinen lassen. */
+    background: var(--paper);
+    border-top: 1px solid var(--ink-30);
+    margin: 0;
+    padding: 1.1rem 2rem 1.9rem;
+  }
+
+  .flip-back h4 { margin-bottom: 0.55rem; }
+
+  /* Der Link bleibt sichtbar — er führt zum Referenzprojekt, nicht zur
+     Rückseite. Nur der zweite, doppelte Link auf der Rückseite entfällt. */
+  .flip-back .flip-btn { display: none; }
+}
+
+/* ==========================================================================
+   Signaturmoment — "Vorgehen"
+   Eine hohe Sektion, in der die Fläche stehen bleibt (sticky) und die drei
+   Projektphasen samt Facettenaufbau nacheinander erscheinen. Das ist das eine
+   Bild, das man weitererzählt — deshalb bewusst ruhig, in drei Schritten,
+   ohne Parallaxe-Spielerei.
+
+   Wichtig: Der Inhalt hängt nicht an der Bewegung. Ohne JavaScript, bei
+   prefers-reduced-motion und auf kleinen Flächen steht alles gleichzeitig da.
+   ========================================================================== */
+
+.approach-pin {
+  background: var(--sage);
+  position: relative;
+  scroll-snap-align: none;
+  min-height: 100svh;
+}
+
+.pin-stage {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--header-h);
+  padding-bottom: calc(var(--header-h) * 0.6);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Gepinnt nur dort, wo wirklich Platz ist. Unter diesen Schwellen bleibt es
+   eine normale, vollständig sichtbare Sektion. */
+@media (min-width: 861px) and (min-height: 620px) {
+  .approach-pin { min-height: 320vh; }
+
+  .pin-stage {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    min-height: 0;
+  }
+}
+
+.pin-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.pin-claim {
+  font-size: var(--t2);
+  color: var(--ink);
+  font-weight: 300;
+  line-height: 1.3;
+  max-width: 26ch;
+}
+
+.emph {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: inherit;
+  /* Goldunterlegung statt zweiter Schriftgröße — das zusätzliche
+     font-size: 1.12em hob die Wörter aus der Grundlinie. */
+  background: linear-gradient(to top, rgba(191, 179, 96, 0.35) 0.16em, transparent 0.16em);
+}
+
+/* --- Die drei Phasen --- */
+
+.phase-list {
+  list-style: none;
+  margin: clamp(1.75rem, 4vh, 2.75rem) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.9rem, 2.2vh, 1.5rem);
+}
+
+.phase {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--ink-30);
+}
+
+.phase-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--teal-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.phase-body h3 {
+  font-size: var(--t3);
+  line-height: 1.15;
+  margin-bottom: 0.25rem;
+}
+
+.phase-body p {
+  color: var(--ink-75);
+  font-size: var(--t4);
+  line-height: 1.45;
+  max-width: 42ch;
+}
+
+.pin-note {
+  margin-top: clamp(1.5rem, 3.5vh, 2.25rem);
+  font-size: var(--t4);
+  color: var(--ink-75);
+  max-width: 52ch;
+}
+
+/* --- Der Facettenaufbau --- */
+
+.pin-visual {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1;
+  margin-left: auto;
+  place-self: center end;
+}
+
+.pf {
+  position: absolute;
+  width: 62%;
+  aspect-ratio: 1;
+  clip-path: var(--facet-clip);
+  --facet-cut: 34px;
+}
+
+/* Halbtransparenz über die Farbe, nicht über opacity: opacity wird beim
+   Sequenzieren zum Ein- und Ausblenden gebraucht.
+   Die drei Zustände lesen sich als Fortschritt: erst die Kontur (den Prozess
+   sehen), dann die Fläche (das Zielbild), dann der volle Ton mit Goldkante
+   (die Umsetzung, die wirkt). */
+.pf-1 {
+  top: 0;
+  left: 0;
+  background: transparent;
+  border: 1.5px solid var(--ink);
+}
+
+.pf-2 {
+  top: 17%;
+  left: 17%;
+  background: rgba(104, 152, 158, 0.5);
+}
+
+.pf-3 {
+  top: 34%;
+  left: 34%;
+  background: var(--ink);
+  border-top: 4px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fabrica-Nova-Zeichen mittig im letzten (dunkelgrünen) Quadrat, eingefärbt in
+   der Hintergrundfarbe des Abschnitts (--sage) — wirkt wie ausgestanzt. Als fertig
+   eingefärbte PNG (assets/fabrica-nova-icon-sage.png), damit es in jedem Renderer
+   zuverlässig erscheint (eine reine CSS-Maske wurde nicht überall dargestellt). */
+.pf-logo {
+  display: block;
+  width: 42%;
+  height: auto;
+}
+
+/* Sequenziert (nur mit Skript, genug Platz, keine reduzierte Bewegung):
+   Phasen und Facetten treten nacheinander ein. */
+.pin-stage.is-sequenced .phase,
+.pin-stage.is-sequenced .pf {
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.pin-stage.is-sequenced .phase {
+  opacity: 0.28;
+  transform: translateY(4px);
+}
+
+.pin-stage.is-sequenced .pf {
+  opacity: 0;
+  transform: translate(18px, 18px) scale(0.96);
+}
+
+.pin-stage.is-sequenced[data-phase="1"] .phase:nth-child(-n + 1),
+.pin-stage.is-sequenced[data-phase="2"] .phase:nth-child(-n + 2),
+.pin-stage.is-sequenced[data-phase="3"] .phase:nth-child(-n + 3) {
+  opacity: 1;
+  transform: none;
+}
+
+.pin-stage.is-sequenced[data-phase="1"] .pf:nth-child(-n + 1),
+.pin-stage.is-sequenced[data-phase="2"] .pf:nth-child(-n + 2),
+.pin-stage.is-sequenced[data-phase="3"] .pf:nth-child(-n + 3) {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 1024px) {
+  .pin-grid { grid-template-columns: 1fr; }
+  .pin-visual { max-width: 260px; margin: 0 0 0 auto; }
+}
+
+@media (max-width: 700px) {
+  .pin-visual { display: none; }
+  .pin-claim { max-width: none; }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+/* Der Footer war vorher fixiert und fuhr nur über eine erlernte Scroll-Geste
+   ein (neue Abwärtsbewegung, mindestens 700 ms nach Ankunft, nach einer Pause
+   von 300 ms). Elegant gebaut, aber praktisch nicht auffindbar — und selbst wer
+   davon wusste, musste es mehrfach versuchen. Jetzt hängt er als normaler Block
+   unter dem Kontaktabschnitt: einmal weiterscrollen, fertig. */
+.site-footer {
+  position: static;
+  background: var(--deep);
+  color: var(--paper-soft);
+  display: flex;
+  align-items: center;
+  padding: clamp(1.9rem, 4vh, 2.75rem) 0;
+  /* Zusätzlicher Abstand unten für die Home-Bar des iPhones. */
+  padding-bottom: calc(clamp(1.9rem, 4vh, 2.75rem) + env(safe-area-inset-bottom));
+  border-top: 3px solid var(--gold);
+}
+
+.site-footer .wrap {
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper);
+  font-size: 0.9rem;
+}
+
+.footer-col h4 {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-light);
+  margin-bottom: 0.9rem;
+  font-weight: 500;
+}
+
+.footer-col p, .footer-col a, .footer-pending {
+  color: var(--paper-soft);
+  font-size: 0.95rem;
+  display: block;
+}
+
+/* Sichtbar als offener Platzhalter markiert, damit er vor dem Livegang auffällt. */
+.footer-pending {
+  color: rgba(253, 246, 234, 0.45);
+  margin-bottom: 0.4rem;
+}
+
+.footer-col a {
+  margin-bottom: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover { color: var(--paper); }
+
+.footer-bottom {
+  margin-top: clamp(1.4rem, 3vh, 1.9rem);
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(253, 246, 234, 0.15);
+  font-size: 0.8rem;
+  color: rgba(253, 246, 234, 0.45);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    gap: 1.25rem 2.5rem;
+  }
+  .footer-brand {
+    font-size: 0.8rem;
+  }
+  .footer-col h4 {
+    font-size: 0.68rem;
+    margin-bottom: 0.5rem;
+  }
+  .footer-col p, .footer-col a {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+  }
+  .footer-bottom {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Entwurfsbanner (.dev-notice) entfernt — es war das Erste, was Besucher sahen,
+   in der lautesten Farbe der Palette. --notice-h steht deshalb auf 0. */
+
+/* ==========================================================================
+   Cases page
+   ========================================================================== */
+
+.cases-inner {
+  width: 100%;
+}
+
+.case-stage {
+  background: linear-gradient(
+    to right,
+    var(--paper) 0%,
+    var(--sage) 14%,
+    var(--sage) 86%,
+    var(--paper) 100%
+  );
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+/* Bedienelemente liegen jetzt in einer Zeile unter der Karte statt als blasse
+   Dreiecke mitten im Text (1,79:1 Kontrast, praktisch unsichtbar). */
+.case-slider {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-track { order: 1; flex: 0 0 100%; }
+.case-arrow { order: 2; }
+.case-dots  { order: 3; }
+.case-arrow.next { order: 4; }
+
+.case-track {
+  display: flex;
+  min-width: 0;
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.case-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.case-slide .case-card {
+  margin: 0;
+  background: transparent;
+}
+
+.case-arrow {
+  position: static;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  margin-top: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--ink-30);
+  padding: 0;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.case-arrow:focus-visible {
+  border-color: var(--ink);
+  background: rgba(0, 58, 65, 0.06);
+}
+
+.case-arrow .tri {
+  width: 0;
+  height: 0;
+  transition: transform 0.2s ease;
+}
+
+.case-arrow.prev .tri {
+  border-width: 7px 11px 7px 0;
+  border-style: solid;
+  border-color: transparent var(--ink) transparent transparent;
+}
+
+.case-arrow.next .tri {
+  border-width: 7px 0 7px 11px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--ink);
+}
+
+.case-arrow.prev:hover .tri { transform: translateX(-2px); }
+.case-arrow.next:hover .tri { transform: translateX(2px); }
+
+.case-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+  margin: 1.4rem 1.1rem 0;
+}
+
+/* Zähler statt reiner Punktreihe: sagt, wo man ist und wie viel noch kommt. */
+.case-counter {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-75);
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.5rem;
+}
+
+.case-counter b { color: var(--ink); font-weight: 700; }
+
+/* Optisch 9 px, zum Antippen 44 px: die sichtbare Scheibe steckt in ::before,
+   die Schaltfläche selbst ist so groß, wie ein Finger sie braucht (iOS-Richtwert
+   44 × 44 px). Vorher war der Punkt exakt 9 × 9 px groß. */
+.dot {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  margin: -14px -12px; /* holt den vergrößerten Rahmen optisch wieder heran */
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  border-radius: 50%;
+  border: 1px solid var(--ink-30);
+  background: transparent;
+}
+
+/* Gold hat auf Creme nur 1,99:1 — als Bedienzustand war der Punkt unsichtbar. */
+.dot.is-active::before {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+/* Keine horizontale Polsterung: dadurch fluchtet die linke Kante von Label,
+   Überschrift und Karteninhalt. Ein durchgehendes Raster ist der billigste
+   Premium-Effekt. Der Salbeigrund läuft weiter über die volle Breite. */
+.case-card {
+  padding: clamp(1.5rem, 4vh, 2.5rem) 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 3vh, 2rem);
+}
+
+.case-card.accent-1 { border-top: 3px solid var(--gold); }
+.case-card.accent-2 { border-top: 3px solid var(--teal); }
+.case-card.accent-3 { border-top: 3px solid var(--wine); }
+
+.case-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.case-meta {
+  padding-top: 0.5rem;
+}
+
+.case-meta .placeholder-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wine);
+  border: 1px solid var(--wine);
+  padding: 0.2rem 0.55rem;
+  margin-bottom: 0.75rem;
+}
+
+.case-meta h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.case-meta .industry {
+  color: var(--ink-75);
+  font-size: 0.9rem;
+}
+
+/* Ergebnis als Kennzahl: der Grund, warum jemand anruft, ist jetzt das größte
+   Element der Karte — vorher stand die Zahl mitten im Satz. */
+.case-result {
+  background: var(--sage);
+  border-left: 3px solid var(--teal);
+  padding: 1.1rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-card.accent-1 .case-result { border-left-color: var(--gold); }
+.case-card.accent-2 .case-result { border-left-color: var(--teal); }
+.case-card.accent-3 .case-result { border-left-color: var(--wine); }
+
+.case-result-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  margin-bottom: 0.35rem;
+}
+
+.kpi-figure {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--display);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.kpi-ref {
+  margin-top: 0.5rem;
+  color: var(--ink-75);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.4;
+  max-width: 34ch;
+}
+
+/* Details — full section width, below meta + Ergebnis. Shown in full, WITHOUT
+   an inner scrollbar: the box grows to fit all of its text on desktop. On small
+   screens a contained scroll is re-enabled below (a long case cannot otherwise
+   fit one phone screen without shrinking the type too far). */
+/* Drei Spalten, weil die Blöcke jetzt eine Reihenfolge erzählen:
+   Situation → Hebel → Effekt. */
+.case-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 2.5rem;
+}
+
+.case-details dt {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  margin-bottom: 0.3rem;
+}
+
+.case-details dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* Per-project variety: each accent arranges its detail blocks a little
+   differently, so slides don't feel like identical templates */
+.case-card.accent-2 .case-details,
+.case-card.accent-3 .case-details {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Kopfzeile auf kleinen Flächen: Logo, Navigation und CTA müssen zusammen in
+   eine Zeile passen. Ein echtes Vollbildmenü folgt in Welle 2. */
+@media (max-width: 720px) {
+  :root { --bar-h: 56px; }
+  .site-nav { gap: 0.85rem; }
+  .site-nav ul { gap: 0.85rem; }
+  .site-nav a { font-size: 0.66rem; letter-spacing: 0.04em; }
+  .site-nav .nav-cta { font-size: 0.66rem; padding: 0.5rem 0.7rem; }
+}
+
+/* Die frühere 480-px-Sonderregel ("Start" ausblenden) ist entfallen:
+   unter 860 px übernimmt das Vollbildmenü. */
+
+@media (max-width: 720px) {
+  .case-top { grid-template-columns: 1fr; padding: 0; }
+  /* Weiterhin ohne horizontale Polsterung, damit die linke Kante fluchtet. */
+  .case-card { padding: 2rem 0; }
+
+  /* Kein Scroll im Scroll mehr: der frühere max-height-Deckel (44vh) hat den
+     Text abgeschnitten und eine unsichtbare innere Scrollfläche erzeugt.
+     Die Karte darf jetzt wachsen, die Seite scrollt normal. */
+  .case-details,
+  .case-card.accent-2 .case-details,
+  .case-card.accent-3 .case-details {
+    max-width: none;
+  }
+}
+
+/* ==========================================================================
+   Team page
+   ========================================================================== */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.team-grid-outer {
+  position: relative;
+}
+
+.team-cta {
+  display: none;
+}
+
+@media (min-width: 1180px) {
+  .team-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    position: absolute;
+    top: clamp(30px, 6vh, 60px);
+    left: 100%;
+    margin-left: 1.5rem;
+    width: 150px;
+  }
+
+  .team-cta-arrow {
+    width: 0;
+    height: 0;
+    flex: 0 0 auto;
+    border-style: solid;
+    border-width: 9px 0 9px 14px;
+    border-color: transparent transparent transparent var(--gold);
+  }
+
+  .team-cta-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    line-height: 1.35;
+    color: var(--ink-75);
+    transition: color 0.2s ease;
+  }
+
+  .team-cta:hover .team-cta-label,
+  .team-cta:focus-visible .team-cta-label { color: var(--ink); }
+}
+
+.team-card { text-align: left; }
+
+/* Gestrichelter Rahmen entfernt — er stammt aus dem Platzhalterzustand und ist
+   die verbreitete Konvention für "Bild fehlt noch". */
+.team-photo {
+  position: relative;
+  height: clamp(150px, 24vh, 240px);
+  width: 100%;
+  /* Cremefarbener Grund: die Vorlagen haben drei verschiedene Hintergründe
+     (weiß, grau, Verlauf). Multiply auf Creme zieht alle drei auf denselben
+     Papierton — das ist der eigentliche Vereinheitlichungs-Effekt. */
+  background: var(--paper);
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  overflow: hidden;
+  clip-path: var(--facet-clip);
+}
+
+/* Duotone als Marken-Layer — Übergangslösung, bis ein einheitliches Shooting
+   vorliegt: die drei Porträts haben unterschiedliche Hintergründe (weiß, grau,
+   Verlauf) und unterschiedliche Lichtstimmung. Die Luminanz-Überlagerung auf
+   Petrol/Teal vereinheitlicht sie zu einer Bildwelt.
+   ZUM ABSCHALTEN: diesen Block und den Farbverlauf in .team-photo entfernen. */
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 10%;
+  display: block;
+  filter: grayscale(1) contrast(1.07);
+  mix-blend-mode: multiply;
+  transform: scale(var(--zoom, 1));
+  transform-origin: 50% 15%;
+  transition: filter 0.45s ease;
+}
+
+/* Beim Überfahren läuft die Farbe ins Bild zurück: die Entsättigung fährt auf
+   null, der zweite Ton blendet aus. Der Multiply-Modus bleibt bewusst aktiv —
+   dadurch wird das ursprüngliche Weiß im Hintergrund weiterhin zum Papierton
+   der Seite, das Foto bleibt also auch in Farbe im Layout verankert.
+   Auslöser ist die ganze Karte, nicht nur das Bild: so färbt sich das Foto
+   auch, wenn man beim Lesen des Profils darüber ist. */
+@media (hover: hover) and (pointer: fine) {
+  .team-card:hover .team-photo img {
+    filter: grayscale(0) contrast(1.02) saturate(1.05);
+  }
+
+  .team-card:hover .team-photo::after {
+    opacity: 0;
+  }
+}
+
+/* Zweiter Ton: hebt die Schatten leicht ins Petrol, damit aus Graustufen eine
+   Marken-Bildwelt wird statt eines Schwarzweiß-Fotos. */
+.team-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  mix-blend-mode: screen;
+  opacity: 0.2;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+
+/* Kopfgrößen angleichen — die Vorlagen sind unterschiedlich weit weg
+   aufgenommen. Werte pro Person, jederzeit nachjustierbar. */
+.team-grid .team-card:nth-of-type(1) img { --zoom: 1.02; }
+.team-grid .team-card:nth-of-type(2) img { --zoom: 1.14; }
+.team-grid .team-card:nth-of-type(3) img { --zoom: 1.55; }
+
+/* Name, Rolle und Profil stehen dauerhaft sichtbar unter dem Foto. Vorher waren
+   sie nur im Hover-Overlay — auf Touchgeräten also nie zu sehen. */
+.team-ident {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.06rem;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.team-role {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+}
+
+.team-bio {
+  margin-top: 0.55rem;
+  color: var(--ink-75);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 800px) {
+  .team-grid {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 calc(-1 * var(--gutter));
+    padding: 0 calc(var(--gutter) * 0.6);
+    -webkit-overflow-scrolling: touch;
+  }
+  .team-card {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+    padding: 0 0.6rem;
+  }
+  .team-photo {
+    height: clamp(170px, 30vh, 280px);
+  }
+}
+
+.team-statement {
+  margin: 2.75rem 0 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ink-30);
+  text-align: center;
+  color: var(--ink-75);
+  font-size: clamp(1.2rem, 1.9vw, 1.45rem);
+  line-height: 1.55;
+  max-width: 72ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Die Projekte-Bühne bricht per 50vw über die Inhaltsbreite hinaus. Damit dieser
+   Überhang unter keinen Umständen die ganze Seite seitlich verschiebbar macht,
+   wird er hier an der Sektion selbst gekappt — overflow: hidden versteht jeder
+   Browser, overflow-x: clip am <html> kennt Safari erst ab Version 16.
+   Die Sektion enthält kein position: sticky, hidden ist hier also unbedenklich. */
+#cases {
+  overflow: hidden;
+}
+
+/* Letzte Sektion vor dem Footer: Sie erzwingt keine volle Bildschirmhöhe mehr.
+   So liegen Kontaktangaben und Footer im selben Blick, statt dass der Footer
+   einen eigenen, fast leeren Bildschirm belegt. */
+.snap-section.contact {
+  min-height: auto;
+  padding-top: calc(var(--header-h) + clamp(1.5rem, 4vh, 2.75rem));
+  /* Deutlich mehr Luft nach unten: der Wechsel auf die dunkle Fläche braucht
+     Abstand, sonst wirkt der Angebotsblock an den Footer gedrückt. */
+  padding-bottom: clamp(3.5rem, 10vh, 7rem);
+  /* Kein Snap-Ziel: am Seitenende soll frei gescrollt werden, damit der
+     Footer nicht wieder nach oben weggezogen wird. Die Sektion davor
+     ("Stimmen") ist der letzte Haltepunkt. */
+  scroll-snap-align: none;
+}
+
+/* ==========================================================================
+   Kontakt — eigene Sektion. Vorher gab es Kontaktdaten nur im Footer, und der
+   öffnete sich ausschließlich über eine erlernte Scroll-Geste.
+   ========================================================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.contact-text p {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--ink-75);
+  max-width: 46ch;
+}
+
+.contact-data {
+  border-top: 1px solid var(--ink-30);
+}
+
+.contact-line {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--ink-30);
+}
+
+.contact-line-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+}
+
+.contact-line-value {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+a.contact-line .contact-line-value {
+  border-bottom: 1px solid var(--ink-30);
+  align-self: flex-start;
+  transition: border-color 0.2s ease;
+}
+
+a.contact-line:hover .contact-line-value,
+a.contact-line:focus-visible .contact-line-value { border-bottom-color: var(--ink); }
+
+/* Offene Platzhalter bleiben sichtbar markiert, damit sie vor dem Livegang auffallen. */
+.contact-line.is-pending .contact-line-value {
+  color: var(--ink-60);
+  font-weight: 400;
+  font-style: italic;
+}
+
+@media (max-width: 800px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ==========================================================================
+   Legal pages
+   ========================================================================== */
+
+.legal-section {
+  padding: calc(var(--header-h) + 2.5rem) 0 4rem;
+}
+
+.legal-body {
+  max-width: 640px;
+}
+
+.legal-body h2 {
+  font-size: 1.3rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-body h2:first-child { margin-top: 0; }
+
+.legal-body p { color: var(--ink-60); margin-bottom: 1rem; }
+
+.legal-pending {
+  background: var(--sage);
+  border-left: 3px solid var(--wine);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Welle 2 — neue Komponenten
+   ========================================================================== */
+
+/* --- Facettenmarke als SVG ------------------------------------------------
+   Vorher ein umrandetes Quadrat, dessen Rand vom clip-path aufgeschnitten
+   wurde — es las sich als unfertiges Kästchen. Jetzt eine geschlossene
+   Kontur mit korrekten Ecken, eine Datei-Definition pro Vorkommen. */
+.facet-mark {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+/* --- Hero ---------------------------------------------------------------- */
+
+.hero-sub {
+  margin-top: 0.9rem;
+  font-size: var(--t4);
+  color: var(--ink-75);
+}
+
+.hero-actions {
+  margin-top: clamp(1.5rem, 4vh, 2.5rem);
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.6rem;
+  clip-path: var(--facet-clip-s);
+  transition: background 0.2s ease;
+}
+
+.btn-primary:focus-visible { background: var(--deep); }
+
+.btn-quiet {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-75);
+  border-bottom: 1px solid var(--ink-30);
+  padding-bottom: 0.25rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-quiet:hover,
+.btn-quiet:focus-visible { color: var(--ink); border-color: var(--ink); }
+
+/* --- Projekte: Branche und Größe als Label über dem Titel ---------------- */
+
+.case-tag {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  margin-bottom: 0.45rem;
+}
+
+.case-meta h3 {
+  font-size: var(--t3);
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+/* --- Mobiles Menü -------------------------------------------------------- */
+
+.nav-burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--ink-30);
+  padding: 0;
+  cursor: pointer;
+  clip-path: var(--facet-clip-s);
+}
+
+.nav-burger:focus-visible { border-color: var(--ink); }
+
+.burger-lines,
+.burger-lines::before,
+.burger-lines::after {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--ink);
+}
+
+.burger-lines { position: relative; }
+
+.burger-lines::before,
+.burger-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.burger-lines::before { top: -5px; }
+.burger-lines::after  { top: 5px; }
+
+.nav-burger[aria-expanded="true"] .burger-lines { background: transparent; }
+.nav-burger[aria-expanded="true"] .burger-lines::before { top: 0; transform: rotate(45deg); }
+.nav-burger[aria-expanded="true"] .burger-lines::after  { top: 0; transform: rotate(-45deg); }
+
+.nav-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: var(--paper);
+  /* Selbst scrollbar und gekapselt, statt das Scrollen am Body zu sperren:
+     overflow:hidden am Body lässt iOS an die Seitenanfang springen. */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: calc(var(--header-h) + 2.5rem) max(var(--gutter), env(safe-area-inset-left)) calc(2.5rem + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nav-panel.is-open { opacity: 1; transform: none; }
+
+.nav-panel ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.nav-panel a {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.nav-panel a[aria-current]:not(.nav-panel-cta) { color: var(--teal-ink); }
+
+/* .nav-panel .nav-panel-cta, nicht nur .nav-panel-cta: sonst gewinnen Farbe und
+   Schriftgröße aus der allgemeineren Regel .nav-panel a — der Button erschien
+   dann textlos und über die volle Breite. */
+.nav-panel .nav-panel-cta {
+  align-self: flex-start;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.4rem;
+  clip-path: var(--facet-clip-s);
+}
+
+.nav-panel .nav-panel-cta:hover,
+.nav-panel .nav-panel-cta:focus-visible { background: var(--deep); color: var(--paper); }
+
+@media (max-width: 860px) {
+  /* .site-nav .nav-list, nicht nur .nav-list: sonst gewinnt die allgemeinere
+     Regel .site-nav ul { display: flex } aus dem Kopfzeilen-Block. */
+  .site-nav .nav-list { display: none; }
+  .nav-burger { display: flex; }
+}
+
+/* Unter 860 px übernimmt das Vollbildmenü — die Sonderregel aus Welle 1,
+   die "Start" ausblendete, ist damit überflüssig. */
+
+/* --- Projekte: Spalten auf kleinen Flächen ------------------------------- */
+
+@media (max-width: 900px) {
+  .case-details,
+  .case-card.accent-2 .case-details,
+  .case-card.accent-3 .case-details {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-details,
+  .case-card.accent-2 .case-details,
+  .case-card.accent-3 .case-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Rechtliche Seiten --------------------------------------------------- */
+
+.legal-title {
+  font-size: var(--t3);
+  margin-bottom: 1.75rem;
+}
+
+.legal-body p { color: var(--ink-75); }
+
+.legal-body a {
+  border-bottom: 1px solid var(--ink-30);
+  transition: border-color 0.2s ease;
+}
+
+.legal-body a:hover,
+.legal-body a:focus-visible { border-color: var(--ink); }
+
+/* Offene Pflichtfelder sichtbar markiert, damit sie vor dem Livegang auffallen. */
+.legal-ph {
+  /* Dunklere Variante von --wine: der Markenton hat auf Creme nur 3,7:1 und
+     wäre für kleinen Text zu schwach. */
+  color: #96305C;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.legal-back {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink-30);
+  font-size: var(--t5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Welle 3 — Stimmen, Inhaltsangebot, Projektdetails
+   ========================================================================== */
+
+/* Für Bildschirmleser sichtbar, optisch nicht — die Detail-Links heißen alle
+   "Fall im Detail" und brauchen im Vorlesemodus einen Unterschied. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Weiterführender Link in der Projektkarte --------------------------- */
+
+.case-more {
+  margin-top: 0.25rem;
+}
+
+.case-more a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink-30);
+  padding-bottom: 0.25rem;
+  transition: border-color 0.2s ease;
+}
+
+.case-more a:hover,
+.case-more a:focus-visible { border-bottom-color: var(--ink); }
+
+.case-more-mark {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent currentColor;
+}
+
+/* --- Kundenstimmen ------------------------------------------------------ */
+
+.voices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.voice {
+  margin: 0;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  background: var(--sage);
+  clip-path: var(--facet-clip);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.voice blockquote {
+  margin: 0;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.voice figcaption {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink-30);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.voice cite {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.voice figcaption span {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+}
+
+/* Platzhalterzustand — unübersehbar, damit er nie versehentlich live geht. */
+.voice.is-placeholder {
+  background: transparent;
+  border: 1px dashed #96305C;
+  clip-path: none;
+}
+
+.voice.is-placeholder blockquote,
+.voice.is-placeholder cite,
+.voice.is-placeholder figcaption span {
+  color: var(--ink-75);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.voice-flag {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #96305C;
+  border: 1px solid currentColor;
+  padding: 0.18rem 0.5rem;
+}
+
+.voices-note {
+  margin-top: clamp(1.75rem, 4vh, 2.75rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink-30);
+  color: var(--ink-75);
+  font-size: var(--t4);
+  max-width: 68ch;
+}
+
+@media (max-width: 900px) {
+  .voices-grid { grid-template-columns: 1fr; }
+  .voice { clip-path: none; border-left: 3px solid var(--teal); }
+}
+
+/* --- Inhaltsangebot ("Zettelwirtschaft-Check") -------------------------- */
+
+.offer {
+  margin-top: clamp(2rem, 5vh, 3.25rem);
+  padding-top: clamp(1.5rem, 3.5vh, 2.25rem);
+  border-top: 1px solid var(--ink-30);
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.offer-label {
+  display: block;
+  font-size: var(--t5);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  margin-bottom: 0.5rem;
+}
+
+.offer-text h3 {
+  font-size: var(--t3);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.offer-text p {
+  color: var(--ink-75);
+  font-size: var(--t4);
+  line-height: 1.5;
+  max-width: 54ch;
+}
+
+.offer-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+@media (max-width: 860px) {
+  .offer { grid-template-columns: 1fr; }
+}
+
+/* --- Projekt-Detailseiten ---------------------------------------------- */
+
+.case-page {
+  padding: calc(var(--header-h) + clamp(2rem, 6vh, 4rem)) 0 clamp(2.5rem, 6vh, 4.5rem);
+}
+
+.case-page-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 5vw, 4rem);
+  align-items: start;
+  padding-bottom: clamp(1.75rem, 4vh, 2.75rem);
+  border-bottom: 1px solid var(--ink-30);
+}
+
+.case-page-head h1 {
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.case-page-body {
+  margin-top: clamp(1.75rem, 4vh, 2.75rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3.5rem) clamp(2rem, 5vw, 4rem);
+}
+
+.case-page-body section h2 {
+  font-size: var(--t5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.case-page-body p {
+  color: var(--ink);
+  font-size: var(--t4);
+  line-height: 1.55;
+}
+
+.case-page-body .levers {
+  grid-column: 1 / -1;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink-30);
+}
+
+.case-page-cta {
+  margin-top: clamp(2.5rem, 6vh, 4rem);
+  padding-top: clamp(1.5rem, 3.5vh, 2.25rem);
+  border-top: 1px solid var(--ink-30);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.case-page-cta p {
+  font-size: var(--t3);
+  line-height: 1.25;
+  max-width: 30ch;
+}
+
+.case-nav-links {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  font-size: var(--t5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-nav-links a {
+  color: var(--ink-75);
+  border-bottom: 1px solid var(--ink-30);
+  padding-bottom: 0.2rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.case-nav-links a:hover,
+.case-nav-links a:focus-visible { color: var(--ink); border-color: var(--ink); }
+
+@media (max-width: 800px) {
+  .case-page-head,
+  .case-page-body { grid-template-columns: 1fr; }
+}
+
+/* Akzentkante der Kennzahl auf den Detailseiten — gleiche Logik wie im Slider. */
+.case-result-accent-1 { border-left-color: var(--gold); }
+.case-result-accent-2 { border-left-color: var(--teal); }
+.case-result-accent-3 { border-left-color: var(--wine); }
+
+.case-nav-links.is-top { margin-top: 0; margin-bottom: clamp(1.5rem, 3.5vh, 2.5rem); }
+
+/* ==========================================================================
+   Mobile Feinschliff
+   Geprüft an 375, 390, 430 und 844 × 390 px. Ziel: alles mit dem Daumen
+   erreichbar, keine Funktion, die nur mit Maus existiert.
+   ========================================================================== */
+
+/* Textlinks brauchen auf Touchgeräten eine Trefferhöhe von rund 44 px.
+   Optisch bleibt alles, wo es ist — die Fläche wächst nach oben und unten. */
+@media (hover: none) {
+  .flip-btn,
+  .case-more a,
+  .offer-actions .btn-quiet,
+  .hero-actions .btn-quiet,
+  .case-nav-links a,
+  .legal-back a {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .site-nav .nav-cta {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .footer-col a {
+    padding: 0.45rem 0;
+    margin-bottom: 0;
+  }
+
+  .nav-panel a {
+    padding: 0.35rem 0;
+  }
+}
+
+/* --- Teamfotos auf Touchgeräten -----------------------------------------
+   Der Farb-Hover ist auf dem iPhone naturgemäß unerreichbar. Ersatz: die Karte,
+   die im Karussell gerade in der Mitte steht, zeigt das Foto in Farbe. Das
+   Skript setzt dafür .is-active. */
+.team-card.is-active .team-photo img {
+  filter: grayscale(0) contrast(1.02) saturate(1.05);
+}
+
+.team-card.is-active .team-photo::after {
+  opacity: 0;
+}
+
+/* --- Positionsanzeige des Team-Karussells ------------------------------- */
+
+.team-dots {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .team-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.15rem;
+    margin-top: 1.1rem;
+  }
+
+  .team-dots span {
+    width: 44px;
+    height: 24px;
+    position: relative;
+  }
+
+  .team-dots span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    margin: -4px 0 0 -4px;
+    border-radius: 50%;
+    border: 1px solid var(--ink-30);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .team-dots span.is-on::before {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  /* Etwas mehr Anschnitt: so ist auf den ersten Blick zu sehen, dass rechts
+     noch jemand steht. */
+  .team-card {
+    flex-basis: 78%;
+  }
+}
+
+/* Auf schmalen Flächen ist die Projektkarte höher als der Bildschirm. Die
+   Bedienzeile wandert deshalb über die Karte: So sieht man beim Ankommen sofort
+   "01 / 03" und kann blättern, ohne erst die ganze Karte durchzuscrollen.
+   Gewischt werden kann weiterhin überall auf der Karte. */
+@media (max-width: 720px) {
+  .case-track { order: 5; }
+  .case-arrow.prev { order: 1; }
+  .case-dots { order: 2; }
+  .case-arrow.next { order: 3; }
+
+  .case-arrow { margin-top: 0; margin-bottom: 1.1rem; }
+  .case-dots { margin-top: 0; margin-bottom: 1.1rem; }
+}
+
+/* Sehr flache Fenster (Handy im Querformat, kleine Laptops): Sektionen nicht
+   auf Bildschirmhöhe zwingen und den Inhalt oben ausrichten. Sonst entstehen
+   große leere Flächen über und unter kurzem Inhalt, und bei langem Inhalt
+   klebt der Anfang direkt unter der Kopfzeile.
+   Steht bewusst am Dateiende, damit die Regel die Grundeinstellung von
+   .snap-section überschreibt. */
+@media (max-height: 620px) {
+  .snap-section,
+  .pin-stage {
+    min-height: auto;
+    align-items: flex-start;
+    padding-top: calc(var(--header-h) + 1.75rem);
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Nur in preview.html vorhanden: Stand-Stempel, damit beim Weiterschicken oder
+   am Handy nie unklar ist, ob eine alte Datei geöffnet wurde. Wird von
+   build-preview.py eingefügt. */
+.preview-stamp {
+  color: rgba(253, 246, 234, 0.45);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   Notausgang für die Projekte ohne JavaScript
+   Läuft kein Skript (Lockdown-Modus, Inhaltsblocker, blockierte Datei, alte
+   Engine), dann bewegt nichts den Schienenwagen: man sähe nur das erste Projekt
+   und käme an die anderen zwei nicht heran. In diesem Fall wird die Schiene zu
+   einem normalen, horizontal wischbaren Bereich mit Einrasten — ganz ohne
+   Skript, auf jedem Gerät.
+   ========================================================================== */
+
+html:not(.js) .case-track {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  transform: none !important;
+}
+
+html:not(.js) .case-slide {
+  scroll-snap-align: start;
+}
+
+/* Der vierte Eintrag ist nur der Klon für den nahtlosen Vorwärtslauf des
+   Skripts — ohne Skript wäre er ein doppeltes viertes Projekt. */
+html:not(.js) .case-slide[aria-hidden="true"] {
+  display: none;
+}
+
+/* Pfeile und Punkte brauchen ein Skript. Ohne Skript weisen wir stattdessen
+   aufs Wischen hin. */
+html:not(.js) .case-arrow,
+html:not(.js) .case-dots {
+  display: none;
+}
+
+html:not(.js) .case-slider::before {
+  content: "Zum Blättern seitlich wischen →";
+  order: 0;
+  flex: 0 0 100%;
+  font-size: var(--t5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+  padding-bottom: 1rem;
+}
