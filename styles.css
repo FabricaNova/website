@@ -437,6 +437,19 @@ ul { margin: 0; padding: 0; list-style: none; }
   max-width: 42ch;
 }
 
+/* Mobile: das lange Kompositum „Unternehmensführungs-" passt bei voller
+   H1-Größe (--t1, min 2.5rem) nicht auf schmale Screens und wurde rechts
+   abgeschnitten. Nur hier kleiner skaliert; Desktop bleibt unverändert.
+   Silbentrennung als zusätzlicher Fallback (html lang="de"). */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: clamp(1.6rem, 7.4vw, 2.4rem);
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
+  }
+}
+
 /* ==========================================================================
    Sections
    ========================================================================== */
@@ -989,9 +1002,25 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 @media (max-width: 640px) {
-  .footer-grid {
-    gap: 1.25rem 2.5rem;
+  /* Lange Komposita in Titeln (z. B. „Handwerksunternehmen") nicht abschneiden. */
+  .case-card h3, .case-page-head h1, .cases .section-head h2 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
   }
+}
+
+@media (max-width: 640px) {
+  /* Flex + space-between + wrap ließ „Kontakt" und „Rechtliches" auf
+     unterschiedlichen Zeilen landen. Auf Mobil deshalb ein festes 2-Spalten-
+     Raster: Marke oben über volle Breite, darunter beide Spalten oben bündig. */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 1.5rem 2.5rem;
+  }
+  .footer-col:first-child { grid-column: 1 / -1; }
   .footer-brand {
     font-size: 0.8rem;
   }
