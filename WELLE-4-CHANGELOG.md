@@ -100,3 +100,66 @@ neu erzeugt. `preview.html` **nie direkt bearbeiten** — Quelle ist index/style
   `<img class="pf-logo">` — zuverlässig in jedem Renderer.
 - **Adresse korrigiert:** „Alte Münchener Straße" → **„Alte Münchner Straße"** in
   Impressum und Datenschutz (jede Fundstelle).
+
+## Mobile-Optimierung (31.08.2026) — Desktop unverändert
+
+Alle Änderungen ausschließlich in `@media (max-width: 640px)`; die Desktop-
+Darstellung bleibt exakt gleich.
+
+- **Hero-H1 wurde abgeschnitten:** „Unternehmensführungs-" ist bei voller
+  H1-Größe (`--t1`, min 2.5rem ≈ 40px) breiter als ein Handy-Screen. Auf Mobil
+  jetzt `font-size: clamp(1.6rem, 7.4vw, 2.4rem)` (per Schriftmessung so gewählt,
+  dass das Wort ab 320px Breite auf eine Zeile passt) plus `hyphens: auto` als
+  Fallback.
+- **Footer „Kontakt"/„Rechtliches" nicht auf gleicher Höhe:** Ursache war
+  `display:flex; justify-content:space-between; flex-wrap:wrap` — die Spalten
+  brachen auf verschiedene Zeilen um. Auf Mobil jetzt festes 2-Spalten-Raster
+  (`display:grid; grid-template-columns:1fr 1fr; align-items:start`), die Marke
+  spannt oben über die volle Breite, darunter beide Spalten oben bündig.
+- **Absicherung gegen abgeschnittene lange Titel** (z. B.
+  „Handwerksunternehmen"): `overflow-wrap: break-word; hyphens: auto` für
+  Case-/Projekt-Überschriften auf Mobil (wirkt nur, wenn ein Wort sonst
+  überliefe — kein Effekt auf Desktop).
+- **Nicht selbst gerendert:** Ein Headless-Browser ließ sich in dieser Session
+  nicht einrichten. Die Fixes sind CSS-seitig hergeleitet/berechnet — bitte am
+  Handy gegenprüfen.
+
+## Team-Foto Bastian Richter neu (03.09.2026)
+
+Neues Porträt (enger Kopf-Schulter-Shot, 1534×1536, dunkelgrauer Verlaufs-
+hintergrund) an die beiden anderen angeglichen und ersetzt:
+
+- **Hintergrund freigestellt und auf hell (~232) ersetzt** — der Original-
+  Hintergrund war mit ~120–157 deutlich dunkler als bei Michael (~220) und
+  Sebastian (~243) und hätte im Duotone-Layer ein dunkles Tile ergeben. Da der
+  ML-Freisteller (rembg) offline nicht ladbar war, per Heuristik: neutrale (gering
+  gesättigte) Flächen im mittleren Helligkeitsband, dann nur die **vom Bildrand
+  zusammenhängenden** Bereiche ersetzt (Flood-Fill) — so blieb der dunkle Anzug
+  (gleiche Helligkeit wie der BG) erhalten.
+- **Auf 900×1350 gerahmt** wie Michael/Sebastian (Gesichtsgröße ~15 % der Höhe,
+  gleiche Kopfposition), damit alle drei im selben Kopf-Schulter-Ausschnitt sitzen.
+- **`--zoom` der dritten Karte von 1.55 auf 1.06** gesenkt (das alte, weit
+  entfernte Foto brauchte starken Zoom; das neue nicht mehr). Endergebnis über die
+  komplette Render-Pipeline (Cover + object-position + zoom + Graustufen) simuliert
+  und mit Michael/Sebastian verglichen — Kopfgrößen und Bildwelt stimmen überein.
+- `index.html` musste **nicht** geändert werden (gleicher Dateiname).
+
+**Nachbesserung (03.09.2026):** Die erste Fassung hatte noch Farbfehler an Kopf/Sakko
+und einen ausgeschnitten/unscharf wirkenden Körper (heuristische Maske + weiches
+Einblenden). Neu freigestellt mit **GrabCut** (OpenCV, seeded mit rand­zusammen­hängender
+BG-Maske + Vordergrund-Kern), Kante median-geglättet, scharf auf einheitlich hellen
+Hintergrund gesetzt (kein Feather-Dissolve mehr). Ergebnis: saubere Haar-/Anzugkanten,
+kein Halo, natürlicher Studio-Look. `--zoom` bleibt 1.06. Nur
+`assets/team/team-bastian-richter.jpg` ersetzt + `preview.html` neu gebaut.
+
+**Finale Lösung — ohne Freistellen (03.09.2026):** Auch nach der GrabCut-Version
+blieb an der unteren Kante eine sichtbare „Ausschneide-Spur" (auf Mobil, wo die
+höhere Foto-Box weiter nach unten reicht). Deshalb ganz ohne Freistellen gelöst:
+Bastians **echtes Foto mit durchgehendem Hintergrund** wird auf die Breite
+eingepasst und die Belichtung moderat angehoben (Gamma-Kurve; sein Foto war mit
+Gesicht ~105 / BG ~120 deutlich dunkler als Michael ~157/229). Dadurch sitzt der
+untere Bildabschluss **unterhalb** des in der Karte sichtbaren Bereichs (Desktop
+wie Mobil) — es gibt gar keine Schnittkante mehr, nur echtes Foto mit realem
+Hintergrund. Kein Halo, kein Cutout. `--zoom` der dritten Karte auf **1.00**
+(das eingepasste Foto hat die passende Kopfgröße). Ergebnis über die Render-
+Pipeline für Desktop- und Mobile-Box geprüft und mit Michael/Sebastian verglichen.

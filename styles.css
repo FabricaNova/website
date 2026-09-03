@@ -1465,7 +1465,7 @@ ul { margin: 0; padding: 0; list-style: none; }
    aufgenommen. Werte pro Person, jederzeit nachjustierbar. */
 .team-grid .team-card:nth-of-type(1) img { --zoom: 1.02; }
 .team-grid .team-card:nth-of-type(2) img { --zoom: 1.14; }
-.team-grid .team-card:nth-of-type(3) img { --zoom: 1.55; }
+.team-grid .team-card:nth-of-type(3) img { --zoom: 1.00; }
 
 /* Name, Rolle und Profil stehen dauerhaft sichtbar unter dem Foto. Vorher waren
    sie nur im Hover-Overlay — auf Touchgeräten also nie zu sehen. */
